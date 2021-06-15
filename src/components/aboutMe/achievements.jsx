@@ -60,7 +60,7 @@ export default function Achievements(props) {
                     
                 </div>
             </div>  
-            </Grid>
+            </Grid>        
         </Grid>
         <Grid container>
          
