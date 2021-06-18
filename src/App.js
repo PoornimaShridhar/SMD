@@ -15,7 +15,7 @@ function App() {
         <Switch>
           <Route exact from="/" render={props => <div> <Navbar {...props}/><Home /></div> }/>
           <Route exact from="/aboutMe" render={props => <div> <Navbar {...props}/><Journey /></div> }/>
-          <Route exact from="/aboutMe/achievements" render={props => <div> <Navbar {...props}/><Achievements /></div> }/>
+          <Route exact from="/achievements" render={props => <div> <Navbar {...props}/><Achievements /></div> }/>
           <Route exact from="/blog" render={props => <div> <Navbar {...props}/><Blog /></div> }/>
           <Route exact from="/blog/blogpage" render={props => <div> <Navbar {...props}/><BlogPage /></div> }/>
           <Route exact from="/consult" render={props => <div> <Navbar {...props}/><Consult /></div> }/>

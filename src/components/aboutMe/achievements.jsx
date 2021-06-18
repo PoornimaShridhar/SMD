@@ -14,6 +14,7 @@ import c3 from "./assets/c3.jpg";
 import c4 from "./assets/c4.jpg";
 import v1 from "./assets/v1.png";
 import v2 from "./assets/v2.png";
+import c5 from './assets/c5.jpg';
 
 const useStyles = makeStyles({
   root: {
@@ -56,15 +57,14 @@ export default function Achievements(props) {
             <div class="ui-card3 ui-card">
                 <img src={c4}/>
                 <div class="description">
-                    <h3>IAPES</h3>
-                    
+                    <a href="https://www.youtube.com/watch?v=CzQ8z9YBEkY" target="_blank">IAPES</a>     
                 </div>
             </div>  
             </Grid>        
         </Grid>
         <Grid container>
          
-            <Grid item xs={12} sm={6} style={{marginTop:"30px", paddingRight:"20px"}} align="right">
+            <Grid item xs={12} sm={4} style={{marginTop:"30px", paddingRight:"20px"}} align="right">
             <div class="ui-card4 ui-card">
                 <img src={v1}/>
                 <div class="description">
@@ -74,12 +74,21 @@ export default function Achievements(props) {
                 </div>
             </div>
             </Grid>
-            <Grid item xs={12} sm={6} style={{marginTop:"30px"}}>
+            <Grid item xs={12} sm={4} style={{marginTop:"30px"}}>
             <div class="ui-card5 ui-card">
                 <img src={v2}/>
                 <div class="description">
                 <a href="https://youtu.be/1W7CQlq6XxQ" target="_blank">Family Doctor | Kannada Serial | Full Episode - 8 | Zee Kannada</a>
                     
+                </div>
+            </div>
+            </Grid>
+
+            <Grid item xs={12} sm={3} style={{marginTop:"30px"}}>
+            <div class="ui-card5 ui-card">
+                <img src={c5}/>
+                <div class="description">
+                    <h3>Training Programme on NUTRIGENOMICS</h3>
                 </div>
             </div>
             </Grid>
