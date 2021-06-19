@@ -13,12 +13,12 @@ function App() {
     <div className="App">
       <Router>
         <Switch>
-          <Route exact from="/" render={props => <div> <Navbar {...props}/><Home /></div> }/>
-          <Route exact from="/aboutMe" render={props => <div> <Navbar {...props}/><Journey /></div> }/>
-          <Route exact from="/achievements" render={props => <div> <Navbar {...props}/><Achievements /></div> }/>
-          <Route exact from="/blog" render={props => <div> <Navbar {...props}/><Blog /></div> }/>
-          <Route exact from="/blog/blogpage" render={props => <div> <Navbar {...props}/><BlogPage /></div> }/>
-          <Route exact from="/consult" render={props => <div> <Navbar {...props}/><Consult /></div> }/>
+          <Route exact from="/" render={props => <div> <Navbar {...props}/><br /><br /><br /><br /><Home /></div> }/>
+          <Route exact from="/aboutMe" render={props => <div> <Navbar {...props}/><br /><br /><Journey /></div> }/>
+          <Route exact from="/achievements" render={props => <div> <Navbar {...props}/><br /><br /><Achievements /></div> }/>
+          <Route exact from="/blog" render={props => <div> <Navbar {...props}/><br /><br /><Blog /></div> }/>
+          <Route exact from="/blog/blogpage" render={props => <div> <Navbar {...props}/><br /><br /><BlogPage /></div> }/>
+          <Route exact from="/consult" render={props => <div> <Navbar {...props}/><br /><br /><Consult /></div> }/>
         </Switch>
       </Router>
       

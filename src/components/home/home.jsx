@@ -13,10 +13,7 @@ import eash from "./assets/eash.webp";
 import person from './assets/person.png';
 import Typography from '@material-ui/core/Typography';
 import Grid from '@material-ui/core/Grid';
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col'; 
 import Container from 'react-bootstrap/Container';
-import { AiOutlineInstagram , AiOutlineFacebook, AiFillTwitterCircle, AiFillLinkedin} from "react-icons/ai";  
 import cx from 'clsx';
 import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
@@ -27,6 +24,7 @@ import { useLightTopShadowStyles } from '@mui-treasury/styles/shadow/lightTop';
 import Modal from '@material-ui/core/Modal';
 import Carousel from 'react-material-ui-carousel';
 import { Paper, Button } from '@material-ui/core';
+import { SocialIcon } from 'react-social-icons';
 
 function Item(props)
 {
@@ -45,7 +43,7 @@ function Item(props)
         <Paper>
             <Grid container >
                 <Grid item xs={12} sm={3}>
-                    <Avatar alt="Dr. Bharath Kumar" className={classes.large} src={props.item.avatar} style={{marginLeft:"120px"}}/>
+                    <Avatar alt="Dr. Bharath Kumar" className={classes.large} src={props.item.avatar} style={{marginLeft:"120px", border:"1px solid black"}}/>
                 </Grid>
                 <Grid item xs={12} sm={9}>
                     <Typography variant="h5"  gutterBottom align="left" style={{fontFamily: 'Roboto Slab', fontSize:'20px', margin:"30px" }}>
@@ -190,13 +188,15 @@ function Home() {
             </Grid>
             <br/>
             <Grid item xs={12} sm={12}>
-            <a href="https://www.instagram.com/sportsmedicinedoctor/" target="_blank"><AiOutlineInstagram size="40"/></a>
+            <SocialIcon url="https://www.instagram.com/sportsmedicinedoctor/" target="_blank" style={{margin:"5px"}}/>
             
-            <a href="https://www.facebook.com/SportsMedicineDoctor/" target="_blank"><AiOutlineFacebook size="40"/></a>
 
-            <a href="https://twitter.com/sportsdocindia" target="_blank"><AiFillTwitterCircle size="40"/></a>
+            <SocialIcon url="https://www.facebook.com/SportsMedicineDoctor/" target="_blank" style={{margin:"5px"}}/>
             
-            <a href="https://www.linkedin.com/in/sportsmedicinedoctor/" target="_blank"><AiFillLinkedin size="40"/></a>
+           
+            <SocialIcon url="https://twitter.com/sportsdocindia" target="_blank" style={{margin:"5px"}}/>
+           
+            <SocialIcon url="https://www.linkedin.com/in/sportsmedicinedoctor/" target="_blank" style={{margin:"5px"}}/>
             </Grid>
         </Grid> 
     <br/>

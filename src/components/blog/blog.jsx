@@ -25,9 +25,11 @@ const useStyles = makeStyles(() => ({
   root: {
     maxWidth: 304,
     margin: 'auto',
+    border: "1px solid black"
   },
   content: {
     padding: 24,
+    backgroundColor: "#ffebe8"
   },
   avatar: {
     width: 50,
@@ -108,7 +110,7 @@ export const Blog = React.memo(
                               {cred.created_at}       
                           </div>
                       </CardContent>
-                      <Box px={2} pb={2} mt={-1}>
+                      <Box px={2} pb={2} mt={-1} style={{backgroundColor: "#ffebe8"}}>
                   
                           <IconButton>
                           <FavoriteBorderRounded />           

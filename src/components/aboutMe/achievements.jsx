@@ -94,6 +94,137 @@ export default function Achievements(props) {
             </Grid>
             
         </Grid>
+        <br/><br/>
         </div>
   );
 }
+
+
+
+// import React from 'react';
+// import { makeStyles, useTheme } from '@material-ui/core/styles';
+// import MobileStepper from '@material-ui/core/MobileStepper';
+// import Paper from '@material-ui/core/Paper';
+// import Typography from '@material-ui/core/Typography';
+// import Button from '@material-ui/core/Button';
+// import KeyboardArrowLeft from '@material-ui/icons/KeyboardArrowLeft';
+// import KeyboardArrowRight from '@material-ui/icons/KeyboardArrowRight';
+// import c1 from "./assets/c1.jpg";
+// import c3 from "./assets/c3.jpg";
+// import c4 from "./assets/c4.jpg";
+// import v1 from "./assets/v1.png";
+// import v2 from "./assets/v2.png";
+// import c5 from './assets/c5.jpg';
+// // import "./achievements.scss";
+
+
+// const tutorialSteps = [
+//   {
+//     label: 'International E-Conference on Doping in Sports',
+//     imgPath:
+//       c1,
+//   },
+//   {
+//     label: 'International Webinar on Sports Nutrition',
+//     imgPath:
+//       c3,
+//   },
+//   {
+//     label: 'IAPES',
+//     imgPath:
+//       c4,
+//       link:'https://www.youtube.com/watch?v=CzQ8z9YBEkY'
+//   },
+//   {
+//     label: 'PEFI International E-Conference on Doping in Sports',
+//     imgPath:
+//       v1,
+//   },
+//   {
+//     label: 'Family Doctor | Kannada Serial | Full Episode - 8 | Zee Kannada',
+//     imgPath:
+//       v2,
+//   },
+//   {
+//     label: 'Training Programme on NUTRIGENOMICS',
+//     imgPath:
+//       c5,
+//   },
+// ];
+
+// const useStyles = makeStyles((theme) => ({
+//   root: {
+//     maxWidth: '50%',
+//     flexGrow: 1,
+//     marginLeft: "450px",
+//     marginTop: "100px",
+//     border: "3px solid black"
+//   },
+//   header: {
+//     display: 'flex',
+//     alignItems: 'center',
+//     height: 50,
+//     paddingLeft: theme.spacing(4),
+//     backgroundColor: theme.palette.background.default,
+//   },
+//   img: {
+//     height: 700,
+//     maxWidth: '100%',
+//     overflow: 'hidden',
+//     display: 'block',
+//     width: '100%',
+//   },
+// }));
+
+// export default function Achievements() {
+//   const classes = useStyles();
+//   const theme = useTheme();
+//   const [activeStep, setActiveStep] = React.useState(0);
+//   const maxSteps = tutorialSteps.length;
+
+//   const handleNext = () => {
+//     setActiveStep((prevActiveStep) => prevActiveStep + 1);
+//   };
+
+//   const handleBack = () => {
+//     setActiveStep((prevActiveStep) => prevActiveStep - 1);
+//   };
+
+//   return (
+//       <>
+//     <div className={classes.root}>
+//       <Paper square elevation={0} className={classes.header}>
+//         <Typography variant="h5">{tutorialSteps[activeStep].label}
+//         </Typography>
+//         <Typography variant="h6"><a href={tutorialSteps[activeStep].link}>Link</a>
+//         </Typography>
+//       </Paper>
+//       <img
+//         className={classes.img}
+//         src={tutorialSteps[activeStep].imgPath}
+//         alt={tutorialSteps[activeStep].label}
+//       />
+//       <MobileStepper
+//         steps={maxSteps}
+//         position="static"
+//         variant="text"
+//         activeStep={activeStep}
+//         nextButton={
+//           <Button size="small" onClick={handleNext} disabled={activeStep === maxSteps - 1}>
+//             Next
+//             {theme.direction === 'rtl' ? <KeyboardArrowLeft /> : <KeyboardArrowRight />}
+//           </Button>
+//         }
+//         backButton={
+//           <Button size="small" onClick={handleBack} disabled={activeStep === 0}>
+//             {theme.direction === 'rtl' ? <KeyboardArrowRight /> : <KeyboardArrowLeft />}
+//             Back
+//           </Button>
+//         }
+//       />
+//     </div>
+//     <br/>
+//       <br/>
+//     </>
+//   );
+// }

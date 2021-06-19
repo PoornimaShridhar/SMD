@@ -2,8 +2,7 @@ import React from 'react';
 import Typography from '@material-ui/core/Typography';
 import Container from '@material-ui/core/Container';
 import Grid from '@material-ui/core/Grid';
-import b1 from "./assets/b1.jpg";
-import { AiOutlineInstagram , AiOutlineFacebook, AiFillTwitterCircle, AiFillLinkedin} from "react-icons/ai";  
+import b1 from "./assets/b1.jpg"; 
 import Box from '@material-ui/core/Box';
 import IconButton from '@material-ui/core/IconButton';
 import FavoriteBorderRounded from '@material-ui/icons/FavoriteBorderRounded';
@@ -12,6 +11,7 @@ import ChatBubbleOutlineIcon from '@material-ui/icons/ChatBubbleOutline';
 import TextField from '@material-ui/core/TextField';
 import AccountCircle from '@material-ui/icons/AccountCircle';
 import Avatar from '@material-ui/core/Avatar';
+import { SocialIcon } from 'react-social-icons';
 
 export default function BlogPage() {
   return (  
@@ -147,13 +147,15 @@ If there is muscle loss despite adequate protein intake and #StrengthTraining, i
          <Grid container>
             <br/>
             <Grid item xs={12} sm={12} align="center">
-            <a href="https://www.instagram.com/sportsmedicinedoctor/" target="_blank" style={{margin:"10px"}}><AiOutlineInstagram size="30"/></a>
+            <SocialIcon url="https://www.instagram.com/sportsmedicinedoctor/" target="_blank" style={{margin:"5px"}}/>
             
-            <a href="https://www.facebook.com/SportsMedicineDoctor/" target="_blank" style={{margin:"10px"}}><AiOutlineFacebook size="30"/></a>
 
-            <a href="https://twitter.com/sportsdocindia" target="_blank" style={{margin:"10px"}}><AiFillTwitterCircle size="30"/></a>
+            <SocialIcon url="https://www.facebook.com/SportsMedicineDoctor/" target="_blank" style={{margin:"5px"}}/>
             
-            <a href="https://www.linkedin.com/in/sportsmedicinedoctor/" target="_blank" style={{margin:"10px"}}><AiFillLinkedin size="30"/></a>
+           
+            <SocialIcon url="https://twitter.com/sportsdocindia" target="_blank" style={{margin:"5px"}}/>
+           
+            <SocialIcon url="https://www.linkedin.com/in/sportsmedicinedoctor/" target="_blank" style={{margin:"5px"}}/>
             </Grid>
         </Grid> 
         <hr style={{
