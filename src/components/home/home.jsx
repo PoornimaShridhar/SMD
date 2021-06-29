@@ -1,32 +1,25 @@
 import React from 'react';
 import Avatar from '@material-ui/core/Avatar';
 import { makeStyles } from '@material-ui/core/styles';
-import img from './assets/doc.jpg';
-import diploma from "./assets/diploma.jpg";
-import pd from "./assets/pd.jpg";
-import bachelordegree from "./assets/bachelordegree.jpg";
-import msc from './assets/msc.jpeg';
-import sai from './assets/sai.jpeg';
-import msrit from './assets/msrit.png';
-import nutri from './assets/nutri.png';
+import img from './assets/doc.png';
 import eash from "./assets/eash.webp";
 import person from './assets/person.png';
+import cricket from './assets/cricket.jpeg';
+import lifting from './assets/lifting.jpeg';
+import med from './assets/med.jpeg';
+import kinesis from './assets/kinesis.png';
+import medifit from './assets/medifit.png';
+import news from './assets/news.png';
+
 import Typography from '@material-ui/core/Typography';
 import Grid from '@material-ui/core/Grid';
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col'; 
 import Container from 'react-bootstrap/Container';
-import { AiOutlineInstagram , AiOutlineFacebook, AiFillTwitterCircle, AiFillLinkedin} from "react-icons/ai";  
-import cx from 'clsx';
-import Card from '@material-ui/core/Card';
-import CardContent from '@material-ui/core/CardContent';
-import BrandCardHeader from '@mui-treasury/components/cardHeader/brand';
-import TextInfoContent from '@mui-treasury/components/content/textInfo';
 import { useN03TextInfoContentStyles } from '@mui-treasury/styles/textInfoContent/n03';
 import { useLightTopShadowStyles } from '@mui-treasury/styles/shadow/lightTop';    
 import Modal from '@material-ui/core/Modal';
 import Carousel from 'react-material-ui-carousel';
-import { Paper, Button } from '@material-ui/core';
+import { Paper} from '@material-ui/core';
+import Button from 'react-bootstrap/Button'
 
 function Item(props)
 {
@@ -48,13 +41,13 @@ function Item(props)
                     <Avatar alt="Dr. Bharath Kumar" className={classes.large} src={props.item.avatar} style={{marginLeft:"120px"}}/>
                 </Grid>
                 <Grid item xs={12} sm={9}>
-                    <Typography variant="h5"  gutterBottom align="left" style={{fontFamily: 'Roboto Slab', fontSize:'20px', margin:"30px" }}>
+                    <Typography variant="h5"  gutterBottom align="left" style={{fontFamily: 'Times New Roman', fontSize:'25px', margin:"30px" }}>
                     {props.item.name}
                     </Typography>
-                    <Typography variant="h6" gutterBottom align="left" style={{fontFamily: 'Roboto Slab', fontSize:'20px', margin:"30px" }}>
+                    <Typography variant="h6" gutterBottom align="left" style={{fontFamily: 'Times New Roman', fontSize:'25px', margin:"30px" }}>
                     {props.item.description}
                     </Typography>
-                    <Button onClick={handleOpen}>Read More...</Button>
+                    {/* <Button onClick={handleOpen}>Read More...</Button> */}
                 </Grid>
             </Grid>
                     <Modal
@@ -62,7 +55,7 @@ function Item(props)
                         onClose={handleClose}
                     >
                         <div style={modalStyle} className={classes.paper}>
-                            <Typography variant="h6" gutterBottom align="left" style={{fontFamily: 'Roboto Slab', fontSize:'20px', margin:"30px" }}>
+                            <Typography variant="h6" gutterBottom align="left" style={{fontFamily: 'Times New Roman', fontSize:'20px', margin:"30px" }}>
                                 {props.item.rm}
                             </Typography>
                         </div>
@@ -147,132 +140,146 @@ function Home() {
     }
 ]
 
-    var credentials = [
-        {
-            heading: 'POST GRADUATE DIPLOMA IN SPORTS MEDICINE',
-            body: "Netaji Subhas National Institute of Sports, Patiala ",
-            logo: sai,
-            certificate: diploma
-        },
-        {
-            heading: 'BACHELOR OF MEDICINE & BACHELOR OF SURGERY',
-            body: "M S Ramaiah Medical College, Bangalore",
-            logo: msrit,
-            certificate: bachelordegree
-        },
-        {
-            heading: 'PROFESSIONAL TRAINING IN LOW CARBOHYDRATE HIGH FAT / KETOGENIC TREATMENT',
-            body: "Nutrition Network",
-            logo: nutri,
-            certificate: pd
-        },
-        {
-            heading: 'MSC (DIETETICS AND FOOD SERVICE MANAGEMENT)',
-            body: "Indira Gandhi National Open University (Currently Pursuing)",
-            logo: msc,
-            certificate: "",
-        }
-    ]
-
   return (
      <div>
-    <Grid container>
-        <Grid item xs={12} sm={12}>
-            <img src={img}  width="300" height="300"  style={{verticalAlign:"top", position:"center", marginTop:"100px"}}/>
+         
+    <Grid container style={{backgroundColor:'white'}}>
+            <Grid item xs={12} sm={5}>
+            <img src={img}  width="500" height="700"  style={{verticalAlign:"top", position:"center", marginTop:"200px"}}/>
             </Grid>
-            <Grid item xs={12} sm={12}>
-                <Typography variant="h3"  gutterBottom style={{fontFamily: 'Roboto Slab'}}>
-                    DR. BHARATH KUMAR B
+            <Grid item xs={12} sm={7} >
+                <Typography  variant="h6" align="left" style={{fontSize:'30px', fontWeight:"500",marginTop:"250px", marginRight:"20px"}} gutterBottom>
+                   Hi!             
                 </Typography>
-                <Typography variant="h5"  gutterBottom style={{fontFamily: 'Roboto Slab'}}>
-                    <i>MBBS, PGDSM (Sports Medicine)</i>
-                </Typography>
-            </Grid>
-            <br/>
-            <Grid item xs={12} sm={12}>
-            <a href="https://www.instagram.com/sportsmedicinedoctor/" target="_blank"><AiOutlineInstagram size="40"/></a>
-            
-            <a href="https://www.facebook.com/SportsMedicineDoctor/" target="_blank"><AiOutlineFacebook size="40"/></a>
-
-            <a href="https://twitter.com/sportsdocindia" target="_blank"><AiFillTwitterCircle size="40"/></a>
-            
-            <a href="https://www.linkedin.com/in/sportsmedicinedoctor/" target="_blank"><AiFillLinkedin size="40"/></a>
-            </Grid>
-        </Grid> 
-    <br/>
-    <br/>
-    <Container fluid="true">
-    <Grid container spacing={3} style={{backgroundColor:"#d9d8d5"}}>
-            <Grid item xs={12} sm={7}>
-                <Typography  variant="h6" align="left" style={{fontFamily: 'Roboto Slab', fontSize:'20px', margin:"30px" , fontWeight:"500"}}>
+                <Typography  variant="h6" align="left" style={{fontFamily: 'Times New Roman',fontSize:'25px', fontWeight:"500",marginRight:"20px"}}>
                     This is Dr. Bharath Kumar B. I am an Allopathic Doctor specialized in Sports Medicine. I graduated from the prestigious 
                     Netaji Subhas National Institute of Sports. 
                     I am the Founder, Director of Kinesis Sports Clinic and Creator & Program Director of MediFit, an online Medical Weight Loss program.                
                 </Typography>
-            </Grid>
-            <Grid item xs={12} sm={1}>
-                <div style={{ borderWidth: 1, height: 175, backgroundColor: 'black', width: 5, marginLeft: 'auto', marginRight: 'auto' }}></div>
-            </Grid>                  
-
-            <Grid item xs={12} sm={4}>
-                <Typography variant="h6" align="left" style={{fontFamily: 'Roboto Slab', fontSize:'20px', margin:"30px" }}>
-                    My mission is to help the athletes to win Gold medals at the Olympics. He strives to create a Fit India through 
-                    Nutrition, Exercise, and Lifestyle. He envisions a world free from lifestyle disorders!
+                <Typography  variant="h6" align="left" style={{fontFamily: 'Times New Roman',fontSize:'25px', fontWeight:"500",marginTop:"20px",marginRight:"20px"}}>
+                    My mission is to help the athletes to win Gold medals at the Olympics. I strive to create a Fit India through 
+                    Nutrition, Exercise, and Lifestyle. I envision a world free from lifestyle disorders!                
                 </Typography>
+
+                <Typography  variant="h5" align="left" style={{fontSize:'30px',marginTop:"30px",marginRight:"20px"}}>
+                    DR. BHARATH KUMAR B              
+                </Typography>
+                <Typography  variant="h5" align="left" style={{fontFamily: 'Times New Roman',fontSize:'25px',marginTop:"0px",marginRight:"20px"}}>
+                    MBBS, PGDSM (Sports Medicine)               
+                </Typography>
+
+                <Typography  variant="h5" align="left" style={{fontFamily: 'Times New Roman',fontSize:'40px',marginTop:"50px",marginRight:"20px"}}>
+                    My Ventures :             
+                </Typography>
+                <br />
+                <Typography align="left">
+                    <img src={kinesis} alt="" width='400px'height='100px' style={{marginRight:'50px', border:"3px solid black"}}/>
+
+                    <img src={medifit} alt="" width='400px'height='100px' style={{border:"3px solid black"}}/>
+                </Typography>
+                <br />
             </Grid>
-        </Grid>    
-    </Container>
-    
-    <br/><br/>
+            <br/>
+
+    </Grid> 
+    <br/>
+    <br/>
+    <div style={{backgroundColor:'#CCCCCC'}}>
     <Container>
     <Grid container>
             <Grid item xs={12} >
-                <Typography  variant="h3" align="center" style={{fontFamily: 'Roboto Slab', margin:"30px" , fontWeight:"500"}}>
-                    My Credentials
+                <Typography  variant="h5" align="center" style={{fontFamily: 'Times New Roman', margin:"30px" ,fontSize:'50px'}}>
+                    Who am I.....
                 </Typography>
             </Grid>
      </Grid>
      <br/>
      <br/>
-     <Grid container style={{marginLeft:"50px"}}>
-            {
-                credentials.map( (cred, i) => 
+     <Grid container >
                 
-                <Grid item xs={12} sm={3}>
-                    <Card className={cx(classes.root, shadowStyles.root)}>
-                        <BrandCardHeader
-                            image={cred.logo}
-                            extra={ cred.certificate === "" ? <a href="https://www.kinesissportsclinic.in/" target="_blank">Kinesis Sports Clinic</a> :<button type="button" onClick={()=>{handleOpen(cred.certificate)}}>View Certificate</button> } 
-                        />
-                        <CardContent className={classes.content}>
-                            <TextInfoContent
-                            classes={styles}
-                            heading= {cred.heading}
-                            body= {cred.body}
-                            />
-                        </CardContent>
-                    </Card>
-                    <Modal
-                        open={open}
-                        onClose={handleClose}
-                        aria-labelledby="simple-modal-title"
-                        aria-describedby="simple-modal-description"
-                    >
-                        <div style={modalStyle} className={classes.paper}>
-                            <img src={image} alt="Test"  width="1100" height="700" style={{position:"center"}}/>
+                <Grid item xs={12} sm={8}>
+
+
+                    <div id="myCarousel" class="carousel slide" data-ride="carousel" style={{width:'1100px'}}>
+ 
+                    <ol class="carousel-indicators">
+                        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                        <li data-target="#myCarousel" data-slide-to="1"></li>
+                        <li data-target="#myCarousel" data-slide-to="2"></li>
+                    </ol>
+
+
+                    <div class="carousel-inner">
+                        <div class="item active">
+                        <img src={cricket} alt="Chania"/>
+                        <div class="carousel-caption">
+                            <h1 style={{fontFamily: 'Times New Roman'}}>A doctor, who plays cricket...</h1>
+                            
+                            <button variant='primary'>Read More...</button>
                         </div>
-                    </Modal>
+                        </div>
+
+                        <div class="item">
+                        <img src={lifting} alt="Chicago"/>
+                        <div class="carousel-caption">
+                            <h1 style={{fontFamily: 'Times New Roman'}}>A Doctor, who lifts weights...</h1>
+                            <button variant='primary'>Read More...</button>
+                        </div>
+                        </div>
+
+                        <div class="item">
+                        <img src={med} alt="New York"/>
+                        <div class="carousel-caption">
+                            <h1 style={{fontFamily: 'Times New Roman'}}>A doctor who combined Sports and Medicine... </h1>
+                            <button variant='primary'>Read More...</button>
+                        </div>
+                        </div>
+                    </div>
+
+
+                    <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+                        <span class="glyphicon glyphicon-chevron-left"></span>
+                        <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="right carousel-control" href="#myCarousel" data-slide="next">
+                        <span class="glyphicon glyphicon-chevron-right"></span>
+                        <span class="sr-only">Next</span>
+                    </a>
+                    </div>
                 </Grid>
-                )
-            }
+
      </Grid>
     </Container>
-    <br/><br/><br/>
-    <Container>
-        <Grid container >
+    </div>
+    <div style={{backgroundColor:'#CCCCCC'}}><br /><br /></div>
+    
+    <div style={{backgroundColor:"#F59300"}}>
+        <br />
+        <Grid container>
+                <Grid item xs={12}>
+                    <img src={news}alt="" width='200px' height='200px' />
+                {/* </Grid>
+                <Grid item xs={4}> */}
+                <Typography  variant="h4" align="center" style={{fontFamily: 'Times New Roman', fontSize:"40px",color:'black'}}>                 
+                    Subcribe to my NewsLetter!
+                </Typography>
+                <br />
+                <input type="text" placeholder='Enter your Email' style={{width:'300px'}}/>
+                <br /><br />
+                <Button style={{backgroundColor:'black',height:'50px',width:'100px',borderRadius:'10%',fontFamily: 'Times New Roman', fontSize:"20px"}}>Submit</Button>
+                
+                </Grid>
+                
+        </Grid>
+        <br />
+        
+    </div>
+    {/* <Container> */}
+    <div>
+        <Grid container>
                 <Grid item xs={12} >
-                <Typography  variant="h3" align="center" style={{fontFamily: 'Roboto Slab', margin:"30px" , fontWeight:"500"}}>                 
-                    Testimonials     
+                <Typography  variant="h2" align="center" style={{fontFamily: 'Times New Roman', margin:"30px" , fontSize:"50px"}}>                 
+                    What People Say About Me...  
                 </Typography>
                 </Grid>
         </Grid>
@@ -282,7 +289,8 @@ function Home() {
                 items.map( (item, i) => <Item key={i} item={item} /> )
             }
         </Carousel>
-    </Container>
+    </div>
+    {/* </Container> */}
     </div>
   );
 }
