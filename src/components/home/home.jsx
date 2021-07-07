@@ -151,12 +151,12 @@ function Home() {
                 <Typography  variant="h6" align="left" style={{fontSize:'30px', fontWeight:"500",marginTop:"250px", marginRight:"20px"}} gutterBottom>
                    Hi!             
                 </Typography>
-                <Typography  variant="h6" align="left" style={{fontFamily: 'Times New Roman',fontSize:'25px', fontWeight:"500",marginRight:"20px"}}>
+                <Typography  variant="h6" align="left" style={{fontFamily: 'Comfortaa',fontSize:'25px', fontWeight:"500",marginRight:"20px"}}>
                     This is Dr. Bharath Kumar B. I am an Allopathic Doctor specialized in Sports Medicine. I graduated from the prestigious 
                     Netaji Subhas National Institute of Sports. 
                     I am the Founder, Director of Kinesis Sports Clinic and Creator & Program Director of MediFit, an online Medical Weight Loss program.                
                 </Typography>
-                <Typography  variant="h6" align="left" style={{fontFamily: 'Times New Roman',fontSize:'25px', fontWeight:"500",marginTop:"20px",marginRight:"20px"}}>
+                <Typography  variant="h6" align="left" style={{fontFamily: 'Comfortaa',fontSize:'25px', fontWeight:"500",marginTop:"20px",marginRight:"20px"}}>
                     My mission is to help the athletes to win Gold medals at the Olympics. I strive to create a Fit India through 
                     Nutrition, Exercise, and Lifestyle. I envision a world free from lifestyle disorders!                
                 </Typography>
@@ -168,7 +168,7 @@ function Home() {
                     MBBS, PGDSM (Sports Medicine)               
                 </Typography>
 
-                <Typography  variant="h5" align="left" style={{fontFamily: 'Times New Roman',fontSize:'40px',marginTop:"50px",marginRight:"20px"}}>
+                <Typography  variant="h5" align="left" style={{fontFamily: 'Comfortaa',fontSize:'40px',marginTop:"50px",marginRight:"20px"}}>
                     My Ventures :             
                 </Typography>
                 <br />
@@ -188,7 +188,7 @@ function Home() {
     <Container>
     <Grid container>
             <Grid item xs={12} >
-                <Typography  variant="h5" align="center" style={{fontFamily: 'Times New Roman', margin:"30px" ,fontSize:'50px'}}>
+                <Typography  variant="h5" align="center" style={{fontFamily: 'Comfortaa', margin:"30px" ,fontSize:'50px'}}>
                     Who am I.....
                 </Typography>
             </Grid>
@@ -213,7 +213,7 @@ function Home() {
                         <div class="item active">
                         <img src={cricket} alt="Chania"/>
                         <div class="carousel-caption">
-                            <h1 style={{fontFamily: 'Times New Roman'}}>A doctor, who plays cricket...</h1>
+                            <h1 style={{fontFamily: 'Comfortaa'}}>A doctor, who plays cricket...</h1>
                             
                             <button variant='primary'>Read More...</button>
                         </div>
@@ -222,7 +222,7 @@ function Home() {
                         <div class="item">
                         <img src={lifting} alt="Chicago"/>
                         <div class="carousel-caption">
-                            <h1 style={{fontFamily: 'Times New Roman'}}>A Doctor, who lifts weights...</h1>
+                            <h1 style={{fontFamily: 'Comfortaa'}}>A Doctor, who lifts weights...</h1>
                             <button variant='primary'>Read More...</button>
                         </div>
                         </div>
@@ -230,7 +230,7 @@ function Home() {
                         <div class="item">
                         <img src={med} alt="New York"/>
                         <div class="carousel-caption">
-                            <h1 style={{fontFamily: 'Times New Roman'}}>A doctor who combined Sports and Medicine... </h1>
+                            <h1 style={{fontFamily: 'Comfortaa'}}>A doctor who combined Sports and Medicine... </h1>
                             <button variant='primary'>Read More...</button>
                         </div>
                         </div>
@@ -260,13 +260,13 @@ function Home() {
                     <img src={news}alt="" width='200px' height='200px' />
                 {/* </Grid>
                 <Grid item xs={4}> */}
-                <Typography  variant="h4" align="center" style={{fontFamily: 'Times New Roman', fontSize:"40px",color:'black'}}>                 
+                <Typography  variant="h4" align="center" style={{fontFamily: 'Comfortaa', fontSize:"40px",color:'black'}}>                 
                     Subcribe to my NewsLetter!
                 </Typography>
                 <br />
                 <input type="text" placeholder='Enter your Email' style={{width:'300px'}}/>
                 <br /><br />
-                <Button style={{backgroundColor:'black',height:'50px',width:'100px',borderRadius:'10%',fontFamily: 'Times New Roman', fontSize:"20px"}}>Submit</Button>
+                <Button style={{backgroundColor:'black',height:'50px',width:'100px',borderRadius:'10%',fontFamily: 'Comfortaa', fontSize:"20px"}}>Submit</Button>
                 
                 </Grid>
                 
@@ -275,20 +275,63 @@ function Home() {
         
     </div>
     {/* <Container> */}
-    <div>
-        <Grid container>
+    <div style={{backgroundColor:'#FFCE85'}}>
+        <Grid container style={{backgroundColor:'#FFCE85'}}>
                 <Grid item xs={12} >
-                <Typography  variant="h2" align="center" style={{fontFamily: 'Times New Roman', margin:"30px" , fontSize:"50px"}}>                 
+                <Typography  variant="h2" align="center" style={{fontFamily: 'Comfortaa', margin:"30px" , fontSize:"50px"}}>                 
                     What People Say About Me...  
                 </Typography>
                 </Grid>
         </Grid>
-           <br/><br/>
-        <Carousel>
+        <br />       
+        {/* <Carousel>
             {
                 items.map( (item, i) => <Item key={i} item={item} /> )
             }
-        </Carousel>
+        </Carousel> */}
+
+        <Grid container style={{backgroundColor:'#FFCE85'}}>
+            
+        <Grid item xs={12} sm={3} ></Grid>   
+        
+        <Grid item xs={12} sm={2} >
+            
+            <img src={eash} alt="" width="150px" height="150px" style={{borderRadius:'50%'}}/>
+            <br />
+            <h3>Nikilesh Nagaraja</h3>
+            <Typography  variant="h4" align="left" style={{fontFamily: 'Economica', margin:"30px"}}>                 
+                The MediFit program changed my life. It is a simple, easy to follow program which helped me reverse all my medical conditions. Today, I feel more healthy than ever. Thanks to the MediFit team!
+            </Typography>
+            <Typography variant="h1" style={{color:'red'}}>
+                ''
+            </Typography>
+
+            
+        </Grid>
+        <Grid item xs={12} sm={2} >
+            <img src={eash} alt="" width="150px" height="150px" style={{borderRadius:'50%'}}/>
+            <br />
+            <h3>Vinutha Harish</h3>
+            <Typography  variant="h4" align="left" style={{fontFamily: 'Economica', margin:"30px"}}>                 
+                At MediFit, they give you complete knowledge of how your food habits and lifestyle changes help you for a lifetime. The mantra I learned from them was Food is medicine and Health is home-cooked!
+            </Typography>
+            <Typography variant="h1" style={{color:'red'}}>
+                ''
+            </Typography>
+        </Grid>
+        <Grid item xs={12} sm={2} >
+            <img src={eash} alt="" width="150px" height="150px" style={{borderRadius:'50%'}}/>
+            <br />
+            <h3>Jayanta Ghosh.</h3>
+            <Typography  variant="h4" align="left" style={{fontFamily: 'Economica', margin:"30px"}}>                 
+                I had hit the dreaded plateau for almost a year. No matter what I did nothing worked. Dr. Bharath and his team of MediFit cracked this mystery and also educated me on this.
+            </Typography>
+            <Typography variant="h1" style={{color:'red'}}>
+                ''
+            </Typography>
+        </Grid>
+        <Grid item xs={12} sm={3} ></Grid>  
+        </Grid>
     </div>
     {/* </Container> */}
     </div>

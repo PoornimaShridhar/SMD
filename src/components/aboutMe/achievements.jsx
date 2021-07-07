@@ -25,8 +25,10 @@ import msc from './assets/msc.jpeg';
 import sai from './assets/sai.jpeg';
 import msrit from './assets/msrit.png';
 import nutri from './assets/nutri.png';
+import nutri_cert from './assets/nutri_cert.jpg';
 import { useN03TextInfoContentStyles } from '@mui-treasury/styles/textInfoContent/n03';
-import { useLightTopShadowStyles } from '@mui-treasury/styles/shadow/lightTop';    
+import { useLightTopShadowStyles } from '@mui-treasury/styles/shadow/lightTop';
+import Table from 'react-bootstrap/Table'
 
 
 
@@ -52,6 +54,7 @@ const useStyles = makeStyles((theme) => ({
     },
     root: {
         maxWidth: 343,
+        height:400,
         borderRadius: 20,
         backgroundColor: "#ededeb",
         transition: "transform 0.15s ease-in-out",
@@ -169,7 +172,8 @@ export default function Achievements(props) {
             </Grid>
             
         </Grid> */}
-        <Grid container style={{marginLeft:"50px",marginTop:'300px'}}>
+        <h1 style={{marginTop:'250px'}}>My Credentials</h1>
+        <Grid container style={{marginLeft:"50px",marginTop:'50px'}}>
             {
                 credentials.map( (cred, i) => 
                 
@@ -201,9 +205,43 @@ export default function Achievements(props) {
                 )
             }
         </Grid>
+        <br /><br />
 
+        <h1 style={{marginTop:'100px'}}>My Achievements</h1>
+        <br />
+        <Table striped bordered hover>
+        {/* <thead>
+            <tr>
+            <th>#</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Username</th>
+            </tr>
+        </thead> */}
+        <tbody>
+            <tr>
+            {/* <td> <h3 style={{marginTop:'100px'}}>My Certificates</h3></td> */}
+            <td><div id="certhover"><img src={c1} alt="" height='200px' width='200px'/></div><br /> <h3>International E-Conference on Doping in Sports</h3></td>
+            <td><div id="certhover"><img src={nutri_cert} alt="" height='200px' width='200px'/></div><br /> <h3> Nutri Certificate</h3></td>
+            </tr>
+            <tr>
+            <td><div id="certhover"><img src={v1} alt="" height='200px' width='200px'/></div><br /> <h3> <a href="https://www.youtube.com/watch?v=QoPGuFmPtNM" target="_blank">PEFI International E-Conference on Doping in Sports</a> </h3></td>
+            <td><div id="certhover"><img src={v2} alt="" height='200px' width='200px'/></div><br /> <h3> <a href="https://youtu.be/1W7CQlq6XxQ" target="_blank">Family Doctor | Kannada Serial | Full Episode - 8 | Zee Kannada</a></h3></td>
+            </tr>
+            <tr>
+            <td>
+            <audio controls="controls" src="./podcast.mp3">
+                Your browser does not support the HTML5 audio element.
+            </audio>
+            </td>
+            <td><div id="certhover"><img src={c3} alt="" height='200px' width='200px'/></div><br /> <h3>International E-Conference on Doping in Sports</h3></td>
+            </tr>
+        </tbody>
+        </Table>
 
-        <section>
+        <br /><br />
+
+        {/* <section>
             <div class="container" style={{marginTop:'100px'}}>
                 <div class="carousel">
                     <input type="radio" name="slides" checked="checked" id="slide-1"/>
@@ -302,7 +340,10 @@ export default function Achievements(props) {
                     </ul>
                 </div>
             </div>
-        </section>
+        </section> */}
+
+
+        
 
 
         </div>
