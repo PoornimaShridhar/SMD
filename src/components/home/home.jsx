@@ -2,7 +2,12 @@ import React from 'react';
 import Avatar from '@material-ui/core/Avatar';
 import { makeStyles } from '@material-ui/core/styles';
 import img from './assets/doc.png';
+import bharatKumar from './assets/BharatKumar.jpg';
 import eash from "./assets/eash.webp";
+import vin from "./assets/vin.webp";
+import hari from "./assets/hari.webp";
+import jay from "./assets/jay.webp";
+import nik from "./assets/nik.webp";
 import person from './assets/person.png';
 import cricket from './assets/cricket.jpeg';
 import lifting from './assets/lifting.jpeg';
@@ -10,6 +15,22 @@ import med from './assets/med.jpeg';
 import kinesis from './assets/kinesis.png';
 import medifit from './assets/medifit.png';
 import news from './assets/news.png';
+import ADoctorAHealer from './assets/ADoctorAHealer.jpg';
+import ADoctorWhoPlaysCricket from './assets/ADoctorWhoPlaysCricket.jpg';
+import ADoctorWhoLiftsWeights from './assets/ADoctorWhoLiftsWeights.jpg';
+import ExerciseIsMedicine from './assets/ExcerciseIsMedicine.jpg';
+import GymRatherThanHospital from './assets/GymRatherThanHospital.jpg';
+import DoctorWhoCombinedSportsAndMedicine from './assets/DoctorWhoCombinedSportsAndMedicine.jpg';
+import DoctorWhoDoesNotPrescribeMedicine from './assets/DoctorWhoDoesNotPrescribeMedicine.jpg';
+import DoctorWhoIsAFoodie from './assets/ADoctorWhoISAFoodie.jpg';
+import DoctorAThinker from './assets/ADoctorAThinker.jpg';
+import SportsInjury2 from './assets/SportsInjury2.jpeg';
+import Musculoskeletal from './assets/MusculoSkeletal.png';
+import MedicalWeightLoss from './assets/MedicalweightLoss.jpeg';
+import RevereseDia from './assets/ReverseDiabetes.jpeg';
+import SportsNutrition from './assets/SportsNutrition.jpeg';
+import MedifitLogo from './assets/White.png'
+import AthleteHealth from './assets/AthleteHealth.jpeg'
 
 import Typography from '@material-ui/core/Typography';
 import Grid from '@material-ui/core/Grid';
@@ -19,50 +40,60 @@ import { useLightTopShadowStyles } from '@mui-treasury/styles/shadow/lightTop';
 import Modal from '@material-ui/core/Modal';
 import Carousel from 'react-material-ui-carousel';
 import { Paper} from '@material-ui/core';
-import Button from 'react-bootstrap/Button'
+import Button from '@material-ui/core/Button';
+import './home.scss';
+import News3CardDemo from "./ventures/ventures"
+import News3CardDemo2 from './ventures/ventures_medifit';
+import BlogCardDemo from './consultCards/consultCards';
+import testi1 from './assets/testi1.png';
+import testi2 from "./assets/testi2.png";
+import testi3 from "./assets/testi3.png";
+import testi4 from "./assets/testi4.png";
+import testi5 from "./assets/testi5.png";
+import testi6 from "./assets/testi6.png";
 
-function Item(props)
-{
-  const [open, setOpen] = React.useState(false);
-  const [modalStyle] = React.useState(getModalStyle);
-  const classes = useStyles();
+// function Item(props)
+// {
+//   const [open, setOpen] = React.useState(false);
+//   const [modalStyle] = React.useState(getModalStyle);
+//   const classes = useStyles();
 
-    const handleOpen = () => {
-        setOpen(true);
-      };
+//     const handleOpen = () => {
+//         setOpen(true);
+//       };
     
-      const handleClose = () => {
-        setOpen(false);
-      };
-    return (
-        <Paper>
-            <Grid container >
-                <Grid item xs={12} sm={3}>
-                    <Avatar alt="Dr. Bharath Kumar" className={classes.large} src={props.item.avatar} style={{marginLeft:"120px"}}/>
-                </Grid>
-                <Grid item xs={12} sm={9}>
-                    <Typography variant="h5"  gutterBottom align="left" style={{fontFamily: 'Times New Roman', fontSize:'25px', margin:"30px" }}>
-                    {props.item.name}
-                    </Typography>
-                    <Typography variant="h6" gutterBottom align="left" style={{fontFamily: 'Times New Roman', fontSize:'25px', margin:"30px" }}>
-                    {props.item.description}
-                    </Typography>
-                    {/* <Button onClick={handleOpen}>Read More...</Button> */}
-                </Grid>
-            </Grid>
-                    <Modal
-                        open={open}
-                        onClose={handleClose}
-                    >
-                        <div style={modalStyle} className={classes.paper}>
-                            <Typography variant="h6" gutterBottom align="left" style={{fontFamily: 'Times New Roman', fontSize:'20px', margin:"30px" }}>
-                                {props.item.rm}
-                            </Typography>
-                        </div>
-                    </Modal>
-        </Paper>
-    )
-}
+//       const handleClose = () => {
+//         setOpen(false);
+//       };
+//     return (
+//         <Paper>
+//             <Grid container >
+//                 <Grid item xs={12} sm={3}>
+//                     <Avatar alt="Dr. Bharath Kumar" className={classes.large} src={props.item.avatar} style={{marginLeft:"120px"}}/>
+//                 </Grid>
+//                 <Grid item xs={12} sm={9}>
+//                     <Typography variant="h5"  gutterBottom align="left" style={{fontFamily: 'Times New Roman', fontSize:'25px', margin:"30px" }}>
+//                     {props.item.name}
+//                     </Typography>
+//                     <Typography variant="h6" gutterBottom align="left" style={{fontFamily: 'Times New Roman', fontSize:'25px', margin:"30px" }}>
+//                     {props.item.description}
+//                     </Typography>
+//                     {/* <Button onClick={handleOpen}>Read More...</Button> */}
+//                 </Grid>
+//             </Grid>
+//                     <Modal
+//                         open={open}
+//                         onClose={handleClose}
+//                     >
+//                         <div style={modalStyle} className={classes.paper}>
+//                             <Typography variant="h6" gutterBottom align="left" style={{fontFamily: 'Times New Roman', fontSize:'20px', margin:"30px" }}>
+//                                 {props.item.rm}
+//                             </Typography>
+//                         </div>
+//                     </Modal>
+//         </Paper>
+//     )
+// }
 
 function rand() {
     return Math.round(Math.random() * 20) - 10;
@@ -100,6 +131,11 @@ const useStyles = makeStyles((theme) => ({
     boxShadow: theme.shadows[5],
     padding: theme.spacing(2, 4, 3),
     },
+    paperContainer: {
+        backgroundImage: `url(${ADoctorAHealer})`
+    },
+
+    
   }));
 
 function Home() {
@@ -142,8 +178,211 @@ function Home() {
 
   return (
      <div>
+
+<div style={{marginTop:"150px"}}>
+        <div id="myCarousel" class="carousel slide" data-ride="carousel" style={{width:'1900px', }}>
+ 
+                <ol class="carousel-indicators" align="center" style={{top:"10px"}}>
+                    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                    <li data-target="#myCarousel" data-slide-to="1"></li>
+                    <li data-target="#myCarousel" data-slide-to="2"></li>
+                    <li data-target="#myCarousel" data-slide-to="3"></li>
+                    <li data-target="#myCarousel" data-slide-to="4"></li>
+                    <li data-target="#myCarousel" data-slide-to="5"></li>
+                    <li data-target="#myCarousel" data-slide-to="6"></li>
+                    <li data-target="#myCarousel" data-slide-to="7"></li>
+                    <li data-target="#myCarousel" data-slide-to="8"></li>
+                </ol>
+
+
+                <div class="carousel-inner" style={{width:"1900px", height:"800px"}}>
+
+                <div class="item active"  style={{width:"2000px", height:"350px"}}>
+                    {/* <div className="row">
+
+                        <div className="col-sm-6" style={{backgroundColor:"white"}}>
+                        
+                            <img src={bharatKumar} alt="Chania" style={{height:"800px", width:"1000px"}}/>
+                        </div>
+                        <div className="col-sm-6" style={{align:"left", textAlign:"left", 
+                        fontSize:"22px", backgroundColor:"#DEB887", paddingTop:"100px", 
+                        backgroundImage:{bharatKumar}, paddingBottom:"250px"}}>
+                              
+                                   <b>Hi !</b>   <br/> <br/>
+                                        This is Dr. Bharath Kumar B. I am an Allopathic Doctor specialized
+                                        <br/>in Sports Medicine.
+                                        I graduated from the prestigious Netaji Subhas National
+                                        <br/>  Institute of Sports. 
+                                        <br/> <br/>
+                                        I am the Founder, Director of Kinesis Sports Clinic and Creator
+                                        <br/> & Program Director of MediFit, 
+                                        an online Medical Weight Loss program.
+                                        <br/> <br/>
+                                        My mission is to help the athletes to win Gold medals at the Olympics.
+                                        <br/> I strive to create a Fit India 
+                                        through Nutrition, Exercise, and Lifestyle. I envision 
+                                        <br/> a world free from lifestyle disorders!
+                                        <br/> <br/> <br/>
+                                        <div style={{fontFamily: 'Berkshire Swash',fontWeight:"400"}}>
+                                        <h1>DR. BHARATH KUMAR B</h1> </div>
+                                        <div style={{fontFamily: '',fontSize:"250px"}}>
+                                        <h4>MBBS, PGDSM (Sports Medicine)</h4>
+                                            </div>
+                                        </div>
+                        </div> */}
+                                <img src={bharatKumar}  alt="Chania" style={{height:"925px", width:"1835px",zIndex:"-1"
+                                 }}/>
+                                <div class="carousel-caption" align="left" style={{position:"Absolute",top:"50px", color:"white",
+                                fontSize:"30px", textAlign:"left", marginLeft:"550px" ,textShadow: "5px 5px 5px black, 5px 5px 5px black, 5px 5px 5px black", 
+                            }}>
+                                    {/* <h1 style={{fontFamily: 'Comfortaa', fontSize:"120px", }}>A doctor, a healer...</h1> */}
+                                
+                                    {/* <Button variant='primary' style={{marginBottom:"100px"}}>Read More...</Button> */}
+                                    
+                                    
+                                      <div style={{fontSize:"40px"}}>Hi !</div>   
+                                       
+                                        This is Dr. Bharath Kumar B. I am an Allopathic Doctor specialized
+                                        <br/>in Sports Medicine.
+                                        I graduated from the prestigious Netaji Subhas National Institute of Sports. 
+                                        <br/> <br />
+                                        {/* I am the Founder, Director of Kinesis Sports Clinic and Creator
+                                        <br/> & Program Director of MediFit, 
+                                        an online Medical Weight Loss program.
+                                        <br/> <br/> */}
+                                        My mission is to help the athletes to win Gold medals at the Olympics.
+                                        <br/> I strive to create a Fit India 
+                                        through Nutrition, Exercise, and Lifestyle. I envision 
+                                        <br/> a world free from lifestyle disorders!
+                                       <br /> <br />
+                                        <div style={{fontFamily: 'Berkshire Swash',fontWeight:"400"}}>
+                                           
+                                        <h1>DR. BHARATH KUMAR B</h1> </div>
+                                        <div style={{fontFamily: '',fontSize:"250px"}}>
+                                        <h4>MBBS, PGDSM (Sports Medicine)</h4>
+                                            </div>
+                                  
+                                </div>
+
+                        
+
+                    </div>
+
+                    <div class="item"  style={{width:"1900px", height:"800px"}}>
+                        <img src={ADoctorAHealer}  alt="Chania" style={{opacity:"0.9"}}/>
+                        <div class="carousel-caption" align="center">
+                            <h1 style={{fontFamily: 'Comfortaa', fontSize:"145px", textShadow: "5px 5px 5px black, 5px 5px 5px black, 5px 5px 5px black"}}>A doctor, a healer...</h1>
+                           
+                            <Button variant="contained" color="secondary" style={{marginBottom:"240px"}}><h4>Read More...</h4></Button>
+                        </div>
+                    </div>
+
+                    <div class="item"  style={{width:"1900px", height:"400px"}}>
+                        <img src={ADoctorWhoPlaysCricket} alt="Chicago" />
+                        <div class="carousel-caption" align="center" style={{position:"Absolute", top:"170px"}}>
+                            <h1 style={{fontFamily: 'Comfortaa', fontSize:"140px", textShadow: "5px 5px 5px black, 5px 5px 5px black, 5px 5px 5px black"}}>A doctor, who plays cricket...</h1>
+                            <Button variant='contained' color="secondary" ><h4>Read More...</h4></Button>
+                        </div>
+                    </div>
+
+                    <div class="item"  style={{width:"1900px", height:"900px"}}>
+                        <img src={ADoctorWhoLiftsWeights} alt="New York" style={{opacity:"0.9"}}/>
+                        <div class="carousel-caption" align="center">
+                            <h1 style={{fontFamily: 'Comfortaa', fontSize:"140px", textShadow: "5px 5px 5px black, 5px 5px 5px black, 5px 5px 5px black"}}>A Doctor, who lifts weights...</h1>
+                            <Button variant='contained' color="secondary" style={{ marginBottom:"250px"}}><h4>Read More...</h4></Button>
+                        </div>
+                    </div>
+
+                    <div class="item"  style={{width:"1900px", height:"200px", marginTop:"35px"}}>
+                        <img src={ExerciseIsMedicine} alt="New York"/>
+                        <div class="carousel-caption" align="center" style={{position:"Absolute", top:"35px"}}>
+                            {/* <div style={{}}> */}
+                            <h1 style={{fontFamily: 'Comfortaa', fontSize:"123px", color:"black", paddingTop:"150px", textShadow: "5px 5px 5px white, 5px 5px 5px white, 5px 5px 5px white"}}>Exercise is Medicine...</h1>
+                            <Button variant='contained' color="secondary" style={{}}><h4>Read More...</h4></Button>
+                            {/* </div> */}
+                        </div>
+                    </div>
+
+                    <div class="item"  style={{width:"1900px", height:"800px"}}>
+                        <img src={GymRatherThanHospital} alt="New York" style={{opacity:"0.9"}}/>
+                        <div class="carousel-caption" align="center">
+                            <h1 style={{fontFamily: 'Comfortaa', fontSize:"120px", color: "maroon",textShadow: "5px 5px 5px white, 5px 5px 5px white, 5px 5px 5px white"}}>A doctor who would rather work in a gym than a hospital...</h1>
+                            <Button variant='contained' color="secondary" style={{marginBottom:"70px"}}><h4>Read More...</h4></Button>
+                        </div>
+                    </div>
+
+                    <div class="item"  style={{width:"1900px", height:"800px"}}>
+                        <img src={DoctorWhoCombinedSportsAndMedicine} alt="New York" style={{opacity:"0.9"}}/>
+                        <div class="carousel-caption" align="center">
+                            <h1 style={{fontFamily: 'Comfortaa', fontSize:"110px",paddingTop:"120px", textShadow: "5px 5px 5px black, 5px 5px 5px black, 5px 5px 5px black"}}>A doctor who combined Sports and Medicine... </h1>
+                            <Button variant='contained' color="secondary" style={{marginBottom:"180px"}}><h4>Read More...</h4></Button>
+                        </div>
+                    </div>
+
+                    <div class="item"  style={{width:"1900px", height:"300px", marginTop:"30px"}}>
+                        <img src={DoctorWhoDoesNotPrescribeMedicine} alt="New York" />
+                        <div style={{marginTop:"200px"}}>
+                        <div class="carousel-caption" align="center" style={{position:"Absolute", top:"5px"}}>
+                            <h1 style={{fontFamily: 'Comfortaa', fontSize:"120px",}}><div style={{marginTop:"200px", color:"#ffb3de",textShadow: "5px 5px 5px black, 5px 5px 5px black, 5px 5px 5px black"}}>A doctor who does not prescribe medicine...</div></h1>
+                            <Button variant='contained' color="secondary" style={{marginBottom:"5px"}}><h4>Read More...</h4></Button>
+                        </div>
+                        </div>
+                    </div>
+
+                    <div class="item"  style={{width:"1900px", height:"400px"}}>
+                        <img src={DoctorWhoIsAFoodie} alt="New York"/>
+                        <div class="carousel-caption" align="center" style={{position:"Absolute", top:"15px"}}>
+                            <h1 style={{fontFamily: 'Comfortaa', fontSize:"140px",paddingTop:"140px", textShadow: "5px 5px 5px black, 5px 5px 5px black, 5px 5px 5px black"}}>A doctor who is a foodie...</h1>
+                            <Button variant='contained' color="secondary" style={{marginBottom:"1px"}}><h4>Read More...</h4></Button>
+                        </div>
+                    </div>
+
+                    <div class="item"  style={{width:"1900px", height:"800px"}}>
+                        <img src={DoctorAThinker} alt="New York"/>
+                        <div class="carousel-caption" align="center" style={{position:"Absolute", bottom:"8px"}}>
+                            <h1 style={{fontFamily: 'Comfortaa', fontSize:"140px", color:"black", textShadow: "5px 5px 5px white, 5px 5px 5px white, 5px 5px 5px white"}}>A doctor who is a thinker...</h1>
+                            <Button variant='contained' color="secondary" style={{marginBottom:"125px",}}><h4>Read More...</h4></Button>
+                        </div>
+                    </div>
+                </div>
+
+
+                <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+                    <span class="glyphicon glyphicon-chevron-left"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="right carousel-control" href="#myCarousel" data-slide="next">
+                    <span class="glyphicon glyphicon-chevron-right"></span>
+                    <span class="sr-only">Next</span>
+                </a>
+                </div>
+        </div>
          
-    <Grid container style={{backgroundColor:'white'}}>
+        {/* <div style={{marginTop:"150px"}}>
+        <div id="myCarousel" class="carousel slide" data-ride="carousel" style={{width:'1900px'}}>
+ 
+                <ol class="carousel-indicators" align="center">
+                    <li data-target="#myCarousel" data-slide-to="1" class="active"></li>
+                    
+                </ol>
+
+
+                <div class="carousel-inner" style={{width:"1900px", height:"800px"}}>
+
+                <div class="item active"  style={{width:"1900px", height:"200px", marginTop:"35px"}}>
+                        <img src={ExerciseIsMedicine} alt="New York"/>
+                        <div class="carousel-caption" align="center" style={{position:"Absolute", top:"35px"}}>
+                         
+                            <h1 style={{fontFamily: 'Comfortaa', fontSize:"120px", color:"black"}}>Exercise is Medicine...</h1>
+                            <Button variant='contained' color="secondary" style={{}}><h4>Read More...</h4></Button>
+                           
+                        </div>
+                    </div>
+                        </div>
+                    </div>
+                    </div> */}
+
+    {/* <Grid container style={{backgroundColor:'white'}}>
             <Grid item xs={12} sm={5}>
             <img src={img}  width="500" height="700"  style={{verticalAlign:"top", position:"center", marginTop:"200px"}}/>
             </Grid>
@@ -181,10 +420,54 @@ function Home() {
             </Grid>
             <br/>
 
-    </Grid> 
-    <br/>
-    <br/>
-    <div style={{backgroundColor:'#CCCCCC'}}>
+    </Grid>  */}
+    
+    {/* <Grid item xs={12} style={{backgroundColor:"grey"}}>
+                <Typography  variant="h5" align="center" style={{fontFamily: 'Comfortaa', 
+                fontSize:'50px', paddingBottom:"100px", marginTop:"30px"}}>
+                   My Ventures
+                </Typography>
+            </Grid> */}
+           
+    
+    
+        {/* <div style={{backgroundColor:"lightyellow"}}>
+        <Grid item xs={12} >
+                <Typography  variant="h5" align="center" style={{fontFamily: 'Comfortaa', margin:"30px" ,fontSize:'50px'}}>
+                   How can I help?
+                </Typography>
+            </Grid>
+            <br /><br />
+        <Grid container >
+            <Grid item xs={12} sm={4}>
+                <img src={SportsInjury2}/>
+                <h3>Sports Injury Management</h3>
+            </Grid>
+            <Grid item xs={12} sm={4}>
+                <img src={Musculoskeletal}/>
+                <h3>Musculoskeletal Pain Syndromes</h3>
+            </Grid>
+            <Grid item xs={12} sm={4}>
+                <img src={MedicalWeightLoss}/>
+                <h3>Medical Weight Loss</h3>
+            </Grid>
+        </Grid>
+        <Grid container style={{backgroundColor:"lightyellow"}}>
+            <Grid item xs={12} sm={6}>
+                <img src={AthleteHealth}/>
+                <h3>Athlete Health & Doping</h3>
+            </Grid>
+            <Grid item xs={12} sm={4}>
+                <img src={SportsNutrition}/>
+                <h3>Sports Nutrition</h3>
+            </Grid>
+           
+        </Grid>
+        <br /><br />
+        </div> */}
+        
+
+    {/* <div style={{backgroundColor:'#CCCCCC'}}>
     <Container>
     <Grid container>
             <Grid item xs={12} >
@@ -250,10 +533,35 @@ function Home() {
 
      </Grid>
     </Container>
-    </div>
-    <div style={{backgroundColor:'#CCCCCC'}}><br /><br /></div>
-    
-    <div style={{backgroundColor:"#F59300"}}>
+    </div> */}
+    {/* <div style={{backgroundColor:'#CCCCCC'}}><br /><br /></div> */}
+
+            <div style={{backgroundColor:""}}> 
+            <Typography  variant="h4" align="center" style={{fontFamily: 'Comfortaa', fontSize:"40px",color:'black'}}>                 
+            <br />
+                    How can I help you ?
+                    <br />
+                </Typography>
+                <br /> <br />
+               <BlogCardDemo/>
+               <br /> <br />
+               </div>   
+
+               <Grid container style={{backgroundColor:"#F68D91" , paddingBottom:"30px", paddingTop:"50px"}}>
+    <Grid item xs={12} sm={1}></Grid>
+    <Grid item xs={12} sm={3} style={{fontFamily:"East Sea Dokdo", color:"white", fontSize:"150px", 
+     textShadow: "5px 5px 5px black, 5px 5px 5px black, 5px 5px 5px black"
+    }}><i>My Ventures</i></Grid>
+        <Grid item xs={12} sm={1}></Grid>
+        <Grid item xs={12} sm={3} style={{paddingRight:"70px", marginRight:"10px", marginLeft:"0"}}><News3CardDemo /></Grid>
+        
+        <Grid item xs={12} sm={3} style={{paddingRight:"70px"}}><News3CardDemo2 />
+        {/* <div style={{fontFamily:"East Sea Dokdo", color:"white", fontSize:"130px"}}>My Ventures</div> */}
+        </Grid>
+       
+    </Grid>
+
+    <div style={{backgroundColor:"GREY"}}>
         <br />
         <Grid container>
                 <Grid item xs={12}>
@@ -266,7 +574,7 @@ function Home() {
                 <br />
                 <input type="text" placeholder='Enter your Email' style={{width:'300px'}}/>
                 <br /><br />
-                <Button style={{backgroundColor:'black',height:'50px',width:'100px',borderRadius:'10%',fontFamily: 'Comfortaa', fontSize:"20px"}}>Submit</Button>
+                <Button variant='contained' color="secondary" ><h4>Submit</h4></Button>
                 
                 </Grid>
                 
@@ -275,7 +583,56 @@ function Home() {
         
     </div>
     {/* <Container> */}
-    <div style={{backgroundColor:'#FFCE85'}}>
+    <Grid item xs={12} >
+                <Typography  variant="h2" align="center" style={{fontFamily: 'Comfortaa', margin:"30px" , fontSize:"50px"}}>                 
+                    What People Say About Me...  
+                </Typography>
+                </Grid>
+                 <div style={{marginTop:"50px", backgroundColor:"white"}}>
+                        <div id="myCarousel1" class="carousel slide" data-ride="carousel" style={{width:'1900px', backgroundColor:"white"}}>
+                
+                                <ol class="carousel-indicators" align="center">
+                                    <li data-target="#myCarousel1" data-slide-to="0" class="active"></li>
+                                    <li data-target="#myCarousel1" data-slide-to="1"></li>
+                                </ol>
+
+                                <div class="carousel-inner" style={{width:"1900px", height:"500px", backgroundColor:"white"}}>
+
+                                    <div class="item active row"  style={{width:"1900px", height:"200px", marginTop:"35px", backgroundColor:"white"}}>
+                                            <div className="col-sm-4" style={{  marginLeft:"10px"}}>
+                                                <img src={testi1} style={{height:"450px", width:'600px',}} />
+                                            </div>
+                                            <div className="col-sm-4">
+                                                <img src={testi2} style={{height:"450px", width:'600px'}} />
+                                            </div>
+                                            <div className="col-sm-3">
+                                                <img src={testi3} style={{height:"450px", width:'600px'}} />
+                                            </div>
+                                    </div>
+                                    <div class="item row"  style={{width:"1900px", height:"200px", marginTop:"35px",  backgroundColor:"white"}}>
+                                            <div className="col-sm-4" style={{  marginLeft:"10px"}}>
+                                                <img src={testi4} style={{height:"450px", width:'600px',}} />
+                                            </div>
+                                            <div className="col-sm-4">
+                                                <img src={testi5} style={{height:"450px", width:'600px'}} />
+                                            </div>
+                                            <div className="col-sm-3">
+                                                <img src={testi6} style={{height:"450px", width:'600px'}} />
+                                            </div>
+                                    </div>
+                                </div>
+                                <a class="left carousel-control" href="#myCarousel1" data-slide="prev">
+                    <span class="glyphicon glyphicon-chevron-left"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="right carousel-control" href="#myCarousel1" data-slide="next">
+                    <span class="glyphicon glyphicon-chevron-right"></span>
+                    <span class="sr-only">Next</span>
+                </a>
+                        </div>
+                    </div>
+
+    {/* <div style={{backgroundColor:'#FFCE85'}}>
         <Grid container style={{backgroundColor:'#FFCE85'}}>
                 <Grid item xs={12} >
                 <Typography  variant="h2" align="center" style={{fontFamily: 'Comfortaa', margin:"30px" , fontSize:"50px"}}>                 
@@ -284,11 +641,7 @@ function Home() {
                 </Grid>
         </Grid>
         <br />       
-        {/* <Carousel>
-            {
-                items.map( (item, i) => <Item key={i} item={item} /> )
-            }
-        </Carousel> */}
+       
 
         <Grid container style={{backgroundColor:'#FFCE85'}}>
             
@@ -296,7 +649,7 @@ function Home() {
         
         <Grid item xs={12} sm={2} >
             
-            <img src={eash} alt="" width="150px" height="150px" style={{borderRadius:'50%'}}/>
+            <img src={nik} alt="" width="150px" height="150px" style={{borderRadius:'50%', border: "1px solid black"}}/>
             <br />
             <h3>Nikilesh Nagaraja</h3>
             <Typography  variant="h4" align="left" style={{fontFamily: 'Economica', margin:"30px"}}>                 
@@ -309,7 +662,7 @@ function Home() {
             
         </Grid>
         <Grid item xs={12} sm={2} >
-            <img src={eash} alt="" width="150px" height="150px" style={{borderRadius:'50%'}}/>
+            <img src={vin} alt="" width="150px" height="150px" style={{borderRadius:'50%', border: "1px solid black"}}/>
             <br />
             <h3>Vinutha Harish</h3>
             <Typography  variant="h4" align="left" style={{fontFamily: 'Economica', margin:"30px"}}>                 
@@ -320,7 +673,7 @@ function Home() {
             </Typography>
         </Grid>
         <Grid item xs={12} sm={2} >
-            <img src={eash} alt="" width="150px" height="150px" style={{borderRadius:'50%'}}/>
+            <img src={jay} alt="" width="150px" height="150px" style={{borderRadius:'50%', border: "1px solid black"}}/>
             <br />
             <h3>Jayanta Ghosh.</h3>
             <Typography  variant="h4" align="left" style={{fontFamily: 'Economica', margin:"30px"}}>                 
@@ -332,8 +685,8 @@ function Home() {
         </Grid>
         <Grid item xs={12} sm={3} ></Grid>  
         </Grid>
-    </div>
-    {/* </Container> */}
+    </div> */}
+   
     </div>
   );
 }
