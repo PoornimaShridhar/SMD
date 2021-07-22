@@ -13,7 +13,7 @@ import { BrowserRouter as Router, Route,Switch } from "react-router-dom";
 function App() {
   return (
     <div className="App">
-      <Router>
+      <Router basename={process.env.PUBLIC_URL}>
         <Switch>
           <Route exact from="/" render={props => <div> <Navbar {...props}/><Home /></div> }/>
           <Route exact from="/aboutMe" render={props => <div> <Navbar {...props}/><Journey /></div> }/>
