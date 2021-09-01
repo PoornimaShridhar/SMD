@@ -8,11 +8,11 @@ import Button from '@material-ui/core/Button';
 import TextInfoContent from '@mui-treasury/components/content/textInfo';
 import { useBlogTextInfoContentStyles } from '@mui-treasury/styles/textInfoContent/blog';
 import { useOverShadowStyles } from '@mui-treasury/styles/shadow/over';
-import SportsInjuryIcon from "./assets/SportsInjuryIcon.png";
-import MusculoSkeletal from "./assets/MusculoSkeletal.png";
-import MedicalWeightLoss from "./assets/MedicalWeightLoss.png";
-import AthleteHealth from "./assets/AthleteHealthAnddoping.png";
-import SportsNutrition from "./assets/SportsNutrition.png";
+import SportsInjuryIcon from "./assets/si.webp";
+import MusculoSkeletal from "./assets/ms.jpg";
+import MedicalWeightLoss from "./assets/wl.webp";
+import AthleteHealth from "./assets/ah.webp";
+import SportsNutrition from "./assets/sn.webp";
 import img from "../assets/All  About Me images/ADoctorAHealer.jpg"
 import Grid from '@material-ui/core/Grid';
 
@@ -23,14 +23,15 @@ const useStyles = makeStyles(({ breakpoints, spacing }) => ({
     transition: '0.3s',
     boxShadow: '0px 14px 80px rgba(34, 35, 58, 0.2)',
     position: 'relative',
-    maxWidth: 400,
+    maxWidth: "40vh",
     marginLeft: 'auto',
     overflow: 'initial',
-    background: '#ffffff',
+    background: 'none',
     // backgroundColor:"#ffe9ec",
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
+    fontFamily: "Comfortaa",
     paddingBottom: spacing(2),
     border:"2px solid black",
     [breakpoints.up('md')]: {
@@ -40,13 +41,13 @@ const useStyles = makeStyles(({ breakpoints, spacing }) => ({
   },
   media: {
     width: '88%',
-    marginLeft: 'auto',
-    marginRight: 'auto',
+    // marginLeft: 'auto',
+    // marginRight: 'auto',
     marginTop: spacing(-3),
     height: 0,
     paddingBottom: '48%',
     borderRadius: spacing(2),
-    backgroundColor: '#fff',
+    // backgroundColor: 'none',
     position: 'relative',
     [breakpoints.up('md')]: {
       width: '100%',
@@ -61,14 +62,28 @@ const useStyles = makeStyles(({ breakpoints, spacing }) => ({
       left: 0,
       width: '100%',
       height: '100%',
-      backgroundImage: 'linear-gradient(147deg, #fe8a39 0%, #fd3838 74%)',
+      // backgroundImage: 'linear-gradient(147deg, #fe8a39 0%, #fd3838 74%)',
       borderRadius: spacing(2), // 16
       opacity: 0.5,
     },
+   
   },
+  outer:{
+    marginLeft:"15vh",
+    "@media only screen and (max-width: 1200px)":{
+      marginLeft:"10vh"
+    },
+    "@media only screen and (max-width: 770px)":{
+      marginLeft:"3vh"
+    }
+  },
+  
+  
+  
+  
   content: {
     padding: 24,
-   
+    fontFamily: "Comfortaa",
   },
   cta: {
     marginTop: 24,
@@ -104,12 +119,12 @@ export const BlogCardDemo = React.memo(function BlogCard() {
   const shadowStyles = useOverShadowStyles();
   return (
       <div>
-           <Grid container style={{marginLeft:"150px"}}>
+           <Grid container className={styles.outer}>
         {
        
         list1.map((l1) =>
         
-        <Grid item xs={12} sm={3} style={{margin:"10px", }}>
+        <Grid item xs={12} sm={3} style={{margin:"2vh", fontFamily: "Comfortaa", }}>
             <Card className={cx(styles.root, shadowStyles.root)}>
         
             <CardMedia
@@ -117,13 +132,13 @@ export const BlogCardDemo = React.memo(function BlogCard() {
                 image= {l1.image} 
                 // style={{width:"200px",height:"100px"}}
             />
-            <CardContent style={{}}>
+            <CardContent >
                 <TextInfoContent
                 classes={contentStyles}
                 
                 heading={l1.title}
-                style={{fontSize:"35px"}}
-                />
+                style={{fontSize:"35px",  }}
+                ></TextInfoContent>
                 {/* <Button className={buttonStyles}>Read more</Button> */}
             </CardContent>
         

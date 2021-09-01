@@ -16,6 +16,7 @@ import FormControl from '@material-ui/core/FormControl';
 import Select from '@material-ui/core/Select';
 import NativeSelect from '@material-ui/core/NativeSelect';
 import { makeStyles } from '@material-ui/core/styles';
+import './navbar.scss';
 
 
 const useStyles = makeStyles((theme) => ({
@@ -38,46 +39,33 @@ function Navbar() {
         console.log("user_name",user_name)
     })
   return (
-      <AppBar>
-        <Toolbar style={{backgroundColor:"#F68D91" , color:"black"}}>
+      <div>
+      {/* <AppBar> */}
+        {/* <Toolbar style={{backgroundColor:"#F68D91" , color:"black"}}>
             <Grid container>
-                <Grid  style={{ display: "flex", justifyContent: "flex-start"}} item sm={3}>
-                    <EmailIcon fontSize='large'/>
-                  <Typography variant="h5" style={{marginLeft:'10px',fontFamily: 'Comfortaa',fontSize:"20px"}}>
-                      drbkb@sportmedicinedoctor.in
-                  </Typography>
-                </Grid>
-                <Grid style={{ display: "flex", justifyContent: "flex-start" }} item sm={6}>
-                    <PhoneAndroidIcon fontSize='large'/>
-                    <Typography variant="h5" style={{marginLeft:'10px',fontFamily: 'Comfortaa',fontSize:"20px"}}>
-                        +91-9482861070
-                    </Typography> 
-                </Grid>
+               
                 <Grid item sm={3}>
                     <SocialIcon url="https://www.instagram.com/sportsmedicinedoctor/" target="_blank" style={{ height: 40, width: 40 ,marginRight:'10px', }}/>
-                {/* </Grid>
-                <Grid item sm={1}> */}
+               
                     <SocialIcon url="https://www.facebook.com/SportsMedicineDoctor/" target="_blank" style={{ height: 40, width: 40 ,marginRight:'10px', }}/>
-                {/* </Grid>
-                <Grid item sm={1}> */}
+               
                     <SocialIcon url="https://twitter.com/sportsdocindia" target="_blank" style={{ height: 40, width: 40 ,marginRight:'10px',}}/>
-                {/* </Grid>
-                <Grid item sm={1}> */}
+               
                     <SocialIcon url="https://www.linkedin.com/in/sportsmedicinedoctor/" target="_blank" style={{ height: 40, width: 40 ,marginRight:'10px'}}/>
                 </Grid>
             </Grid>
-        </Toolbar>
+        </Toolbar> */}
 
-        <Toolbar style={{backgroundColor:'black', color:"white", fontSize:"20px"}}>
+        {/* <Toolbar style={{backgroundColor:'black', color:"white", fontSize:"20px"}}>
             <Grid container alignItems="center">
-                <Grid  style={{ display: "flex", justifyContent: "flex-start" }} item sm={7}>
+                <Grid  style={{ display: "flex", justifyContent: "flex-start" }} item sm={6}>
 
                   <a href="/" style={{textDecoration:"none"}}>
                       <img src={logo} alt=""  style={{borderRadius: '50%',height:'100px', width:'100px', margin:'10px', marginLeft:"50px"}}/>
                   </a>
 
                 </Grid>
-                <Grid item sm={1}>
+                <Grid item sm={2}>
                     <Typography variant="h5" style={{marginRight:'20px',fontFamily: 'Comfortaa',fontSize:"30px"}}>
                         About Me    
                     </Typography>
@@ -96,12 +84,14 @@ function Navbar() {
                     <Avatar src={user_image} />
                    
                 </Grid>
-                <Grid item sm={1}>
+                <Grid item sm={1}> */}
                 {/* <LoginHooks/> */}
-                    {user_name!="undefined"?
+
+
+                    {/* {user_name!="undefined"?
                     user_name==null? <LoginHooks />:
                    <div class="dropdown">
-                        <button class="btn btn-secondary dropdown-toggle" style={{backgroundColor:"black", color:"white", fontSize:"30px"}} type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <button class="btn btn-secondary dropdown-toggle" style={{backgroundColor:"black",fontFamily: 'Comfortaa', color:"white", fontSize:"30px"}} type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             {user_name}
                         </button>
                    <div class="dropdown-menu" aria-labelledby="dropdownMenu2" style={{backgroundColor:"grey", fontSize:"25px", alignItems:"center"}}>
@@ -114,7 +104,62 @@ function Navbar() {
                 </Grid>
             </Grid>
         </Toolbar>
-      </AppBar>    
+      </AppBar>     */}
+
+                <nav class="navbar navbar-inverse" style={{height:"auto", textAlign:"center"}}>
+                <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar" style={{paddingtop:"3vh"}}>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>                        
+                    </button>
+                    <a class="navbar-brand" href="#" style={{textDecoration:"none"}}>
+                            <img src={logo} alt=""  style={{borderRadius: '50%',height:'auto', width:'100px', margin:'1vh', marginLeft:"5vh"}}/>
+                    </a>
+                </div>
+                <div class="collapse navbar-collapse" id="myNavbar">
+                    <ul class="nav navbar-nav navbar-right" style={{textAlign:"center", paddingTop:"3vh", paddingBottom:"3vh"}}>
+                    <li><a href="#">
+                                <Typography style={{marginRight:'20px',fontFamily: 'Comfortaa',fontSize:"3vh"}}>
+                                    About Me    
+                                </Typography>
+                        </a></li>
+                    <li><a href="#">
+                                <Typography style={{fontFamily: 'Comfortaa',fontSize:"30px"}}>
+                                    Consult   
+                                </Typography>
+                        </a></li>
+                    <li><a href="#">
+                                <Typography style={{fontFamily: 'Comfortaa',fontSize:"30px"}}>
+                                    Blog    
+                                </Typography>
+                        </a></li>
+                        <li><a href="#">
+                        <Avatar src={user_image} />
+                        </a></li>
+                    <li><a href="#">
+                                {user_name!="undefined"?
+                                user_name==null? <LoginHooks />:
+                            <div class="dropdown">
+                                <Typography data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style={{fontFamily: 'Comfortaa',fontSize:"30px",}}>
+                                 {user_name}
+                                </Typography>
+                                    {/* <button class="btn btn-secondary dropdown-toggle" style={{backgroundColor:"black",fontFamily: 'Comfortaa', color:"white", fontSize:"30px"}} type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        {user_name}
+                                    </button> */}
+                            <div class="dropdown-menu" aria-labelledby="dropdownMenu2" style={{backgroundColor:"grey", fontSize:"25px", alignItems:"center"}}>
+                                <LogoutHooks />
+                            </div>
+                            </div>
+                                    :<LoginHooks />
+                                }
+                        </a></li>
+                    </ul>
+                </div>
+                </div>
+                </nav>
+            </div>
   );
 }
 

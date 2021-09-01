@@ -12,7 +12,7 @@ import { Info, InfoSubtitle, InfoTitle } from '@mui-treasury/components/info';
 import { useNewsInfoStyles } from '@mui-treasury/styles/info/news';
 import { useCoverCardMediaStyles } from '@mui-treasury/styles/cardMedia/cover';
 import kinesis from "../assets/kinesis.png";
-import medifit from "../assets/medifit.png"
+import medifit from "../assets/md.png"
 import MedifitLogo from "../assets/White.png"
 
 const useStyles = makeStyles(() => ({card: {

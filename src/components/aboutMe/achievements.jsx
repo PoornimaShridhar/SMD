@@ -383,7 +383,8 @@ import { useN03TextInfoContentStyles } from '@mui-treasury/styles/textInfoConten
 import { useLightTopShadowStyles } from '@mui-treasury/styles/shadow/lightTop';
 import Table from 'react-bootstrap/Table'
 import { Container } from '@material-ui/core';
-
+import { FcGraduationCap,FcFilmReel } from "react-icons/fc";
+import { RiFilePaper2Line } from "react-icons/ri";
 
 
 function rand() {
@@ -476,6 +477,38 @@ export default function Achievements(props) {
     }
 ]
 
+var media =[
+    {
+        heading: 'PEFI International E-Conference on Doping in Sports',
+        body: "Speaker",
+        link: 'https://www.youtube.com/watch?v=QoPGuFmPtNM',
+    },
+    {
+        heading: 'Family Doctor | Kannada Serial | Full Episode - 8 | Zee Kannada',
+        body: "Guest",
+        link: 'https://youtu.be/1W7CQlq6XxQ',
+    },
+]
+
+var certificates =[
+    {
+        heading: 'International E Conference On Doping in Sports',
+        body: "Resource Person",
+        certificate: c1
+    },
+    {
+        heading: 'International Conference On Sports Injury Prevention',
+        body: "Resource Speaker",
+        certificate: iapes
+    },
+    {
+        heading: 'Training Programme on NutriGenomics',
+        body: "Participant",
+        certificate: nutri_cert
+    },
+]
+
+
   return (
       <div>
      {/* <Grid container>
@@ -526,7 +559,7 @@ export default function Achievements(props) {
             </Grid>
             
         </Grid> */}
-        <h1 style={{marginTop:'250px', fontFamily:"Comfortaa"}}>My Credentials</h1>
+        <div class="headings" style={{marginTop:'10vh', fontFamily:"Comfortaa"}}><u>My Credentials</u></div>
         {/* <Grid container style={{marginLeft:"50px",marginTop:'50px'}}>
             {
                 credentials.map( (cred, i) => 
@@ -559,13 +592,13 @@ export default function Achievements(props) {
                 )
             }
         </Grid> */}
-    <br />
-        <Container>
+ 
+        {/* <Container>
         <Table striped bordered hover style={{border:"2px solid black"}}>
         <tbody>
-            <tr style={{backgroundColor:"#FCD8D4"}}>
+            <tr style={{backgroundColor:"#FCD8D4"}}> */}
             {/* <td> <h3 style={{marginTop:'100px'}}>My Certificates</h3></td> */}
-            <td><img src={sai} width="100px" height="100px" style={{borderRadius:'50%', border:"2px solid black"}}/><h3>POST GRADUATE DIPLOMA IN SPORTS MEDICINE</h3> <br /> <h4>Netaji Subhas National Institute of Sports, Patiala</h4></td>
+            {/* <td><img src={sai} width="100px" height="100px" style={{borderRadius:'50%', border:"2px solid black"}}/><h3>POST GRADUATE DIPLOMA IN SPORTS MEDICINE</h3> <br /> <h4>Netaji Subhas National Institute of Sports, Patiala</h4></td>
             <td><div id="certhover"><img src={diploma} alt="" height='300px' width='300px' style={{border:"2px solid black"}}/></div></td>
             </tr>
             <tr style={{backgroundColor:"#FCD8D4"}}>
@@ -663,8 +696,159 @@ export default function Achievements(props) {
 
             </Grid>
 
-        </Container>
-        
+        </Container> */}
+
+                        <Container  >  
+
+                {/* <h1 style={{float:'left'}}> My Credentials </h1> */}
+
+                {
+                    credentials.map((cred,i) =>
+                    
+                    <div>
+
+                        <Grid container alignItems="left">
+
+                        <Grid item xs={12} sm={1}>
+                        <Typography class="icon"  gutterBottom align="left" style={{margin:"3vh" }}>
+                            <FcGraduationCap />
+                            </Typography>
+                        </Grid>
+
+                        <Grid item xs={12} sm={8}>
+                        <Typography class="cred_head" gutterBottom align="left" style={{fontFamily: 'Comfortaa', 
+                         margin:"3vh" , fontWeight:"550"}}>
+                           {cred.heading} <br /> <div class="cred_body"><i>{cred.body}</i></div>
+                            </Typography>
+                        </Grid>
+                        <Grid item xs={12} sm={2}>
+                        <Typography gutterBottom align="left" style={{fontFamily: 'Comfortaa',
+                         margin:"3vh" }}>
+                            <div> {cred.certificate == "" ? <div> - </div> : 
+                            <Button color="secondary" size="lg"  onClick={()=>{handleOpen(cred.certificate)}}> View Certificate</Button>
+                             } 
+                             </div>
+                            </Typography>
+                        </Grid>
+
+                        <Modal
+                            open={open}
+                            onClose={handleClose}
+                            aria-labelledby="simple-modal-title"
+                            aria-describedby="simple-modal-description"
+                        >
+                            <div style={modalStyle} className={classes.paper}>
+                                <img src={image}   width="100%" height="auto" style={{position:"center"}}/>
+                            </div>
+                        </Modal>
+
+                        </Grid>
+
+                        <br />
+                        <hr />
+                    </div> 
+
+                    
+                    )
+                }
+
+
+                
+
+                <div class="headings" style={{marginTop:'0.5vw', fontFamily:"Comfortaa"}}><u>Media</u></div>
+
+
+                {
+                    media.map((med,i) =>
+                    
+                    <div>
+
+                        <Grid container>
+
+                        <Grid item xs={12} sm={1}>
+                        <Typography class="icon"  gutterBottom align="left" style={{margin:"3vh" }}>
+                            <FcFilmReel/>
+                            </Typography>
+                        </Grid>
+
+                        <Grid item xs={12} sm={8}>
+                        <Typography class="cred_head" gutterBottom align="left" style={{fontFamily: 'Comfortaa', 
+                         margin:"3vh" }}>
+                            {med.heading} <br /> <div class="cred_body"><i>{med.body}</i></div>
+                            </Typography>
+                        </Grid>
+                        <Grid item xs={12} sm={2}>
+                        <Typography  gutterBottom align="left" style={{fontFamily: 'Comfortaa', margin:"3vh" }}>
+                       
+                            <div> <a href={med.link} target="_blank"> <Button color="secondary" size="lg">Watch</Button></a> </div>
+                            </Typography>
+                        </Grid>
+
+                        </Grid>
+
+                        <br />
+                        <hr />
+                    </div>
+                    
+                    )
+                }
+
+
+
+            <h1 style={{marginTop:'0.5vw', fontFamily:"Comfortaa"}}><u>Conferences</u></h1>
+
+
+                {
+                    certificates.map((cert,i) =>
+                    
+                    <div>
+
+                        <Grid container>
+
+                        <Grid item xs={12} sm={1}>
+                        <Typography class="icon" gutterBottom align="left" style={{ margin:"3vh" }}>
+                            <RiFilePaper2Line />
+                            </Typography>
+                        </Grid>
+
+                        <Grid item xs={12} sm={8}>
+                        <Typography class="cred_head"  gutterBottom align="left" style={{fontFamily: 'Comfortaa', margin:"3vh" }}>
+                            <div>{cert.heading}</div> <div class="cred_body"><i>{cert.body}</i></div>
+                            </Typography>
+                        </Grid>
+                        <Grid item xs={12} sm={2}>
+                        <Typography gutterBottom align="left" style={{fontFamily: 'Comfortaa', margin:"3vh" }}>
+                            <div> 
+                            <Button color="secondary" size="lg" onClick={()=>{handleOpen(cert.certificate)}}> View Certificate</Button>
+                                 {/* <button type="button" onClick={()=>{handleOpen(cert.certificate)}}>View Certificate</button>  */}
+                                   </div>
+                            </Typography>
+                        </Grid>
+
+                        <Modal
+                            open={open}
+                            onClose={handleClose}
+                            aria-labelledby="simple-modal-title"
+                            aria-describedby="simple-modal-description"
+                        >
+                            <div style={modalStyle} className={classes.paper}>
+                                <img src={image}   width="100%" height="auto" style={{position:"center"}}/>
+                            </div>
+                        </Modal>
+
+                        </Grid>
+
+                        <br />
+                        <hr />
+                    </div>
+                    
+
+                    
+                    )
+                }
+
+                </Container>
+                        
 
         <br /><br />
 

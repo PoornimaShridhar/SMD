@@ -16,3 +16,13 @@
     position: relative;
     display: inline-block;
   }
+
+  @media only screen and (max-width: 770px) {
+    .navbar-header{
+      height:16vh
+    }
+
+    .navbar-toggle{
+      margin-top: 6vh;
+    }
+  }
