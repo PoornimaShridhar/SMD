@@ -69,7 +69,6 @@ export const Blog = React.memo(
         const textCardContentStyles = useN01TextInfoContentStyles();
         const [modalShow, setModalShow] = useState(false);
 
-
         useEffect(() => {
             if (loadingcred) {
                 // fetch('http://0.0.0.0:8004/blog/api/blog/1/get_threads')
@@ -404,14 +403,14 @@ export const Blog = React.memo(
                                     </Avatar> */}
 
                                     
-                                        <Avatar className={cardStyles.avatar} >
+                                        {/* <Avatar className={cardStyles.avatar} >
                                             <Button variant="primary" onClick={() => setModalShow(true)}>
                                                 <IconButton>
                                                     <Share />
-                                                </IconButton>
+                                                </IconButton> */}
                                                 {/* <Share1 /> */}
-                                            </Button>
-                                        </Avatar>
+                                            {/* </Button>
+                                        </Avatar> */}
 
                                         <Modal style={{marginTop:"400px"}}
                                         show= {modalShow}

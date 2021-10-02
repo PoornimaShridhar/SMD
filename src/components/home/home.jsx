@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import bharatKumar from './assets/BharatKumar.jpg';
 import Bharat_kumar_doc from './assets/Bharat_kumar_doc.jpg';
@@ -72,6 +72,7 @@ function Home() {
     const [open, setOpen] = React.useState(false);
     const [modalStyle] = React.useState(getModalStyle);
     const [image, setImage] = React.useState("");
+    const [subscriberEmail, setSubscriberEmail] = useState("");
 
     const handleOpen = (img) => {
         setOpen(true);
@@ -81,6 +82,36 @@ function Home() {
     const handleClose = () => {
         setOpen(false);
     };
+
+    const saveEmail=(e)=>{
+        setSubscriberEmail(e.target.value)
+        console.log(subscriberEmail, "reply text")
+    }
+
+    const postEmail=(e)=>{
+    
+        var base_url = 'http://0.0.0.0:8004/blog/api/subscribers/add_email/'
+        var data = ""
+       
+        data = {
+            email_add: subscriberEmail
+        }
+
+        fetch(base_url,{
+            method: "POST",
+            headers:{
+              'Accept': 'application/json',
+              'Content-type': 'application/json',
+            },
+            body: JSON.stringify(data)
+          })
+          .then(response => response.json())
+          .then(data => {console.log(data, "reply response_________________________________")
+          setSubscriberEmail("")
+          window.location.reload(false);
+        })
+       
+    }
 
     return (
         <div>
@@ -216,9 +247,12 @@ function Home() {
            <br /><br />
             <Grid container style={{ paddingBottom: "", display:"flex"}}>
                 <Grid item xs={12} sm={12}>
-                    <img src={complete_logo} style={{
+                    <img src={complete_logo} useMap="#multilinks" style={{
                         height: "auto", width: "40%", 
                     }} />
+                    <map name="multilinks" class="multilinks">
+                        <area alt="" href="https://medifit.in/" shape="circle" coords="534,496,250" />
+                    </map>
                     {/* <Typography  align="center" style={{
                         fontFamily: 'Comfortaa', fontSize: "2vw", color: 'black',
                         color: "white",
@@ -282,9 +316,12 @@ function Home() {
                         <br />
                         <img src={news} alt="" width='200vh' height='auto' style={{}} />
                         <br />
-                        <input type="text" placeholder='Enter your Email' style={{ width: '300px', fontFamily: 'Comfortaa', fontWeight: "500" }} />
+                        <input type="text" placeholder='Enter your Email' style={{ width: '300px', fontFamily: 'Comfortaa', 
+                        fontWeight: "500" }} value={subscriberEmail} onChange={saveEmail}/>
                         <br /><br />
-                        <Button variant='contained' color="white" style={{ backgroundColor: "black" }}><div class="submit" style={{ fontFamily: 'Comfortaa', fontWeight: "600", color: "white" }}>Submit</div></Button>
+                        <Button variant='contained' color="white" style={{ backgroundColor: "black" }}><div class="submit"
+                         style={{ fontFamily: 'Comfortaa', fontWeight: "600", color: "white" }}
+                         onClick={ postEmail } >Submit</div></Button>
 
                     </Grid>
 

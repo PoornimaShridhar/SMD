@@ -114,25 +114,39 @@ function Navbar() {
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>                        
                     </button>
-                    <a class="navbar-brand" href="#" style={{textDecoration:"none"}}>
+                    <a class="navbar-brand" href="/" style={{textDecoration:"none"}}>
                             <img src={logo} alt=""  style={{borderRadius: '50%',height:'auto', width:'100px', margin:'1vh', marginLeft:"5vh"}}/>
                     </a>
                 </div>
-                <div class="collapse navbar-collapse" id="myNavbar">
+                <div class="collapse navbar-collapse" id="myNavbar" style={{color:"none"}}>
                     <ul class="nav navbar-nav navbar-right" style={{textAlign:"center", paddingTop:"3vh", paddingBottom:"3vh"}}>
-                    <li><a href="#">
-                                <Typography style={{marginRight:'20px',fontFamily: 'Comfortaa',fontSize:"3vh"}}>
-                                    About Me    
+                    <li><a href="#" style={{color:"none", textDecoration:"none"}}>
+                                <Typography style={{marginRight:'20px',fontFamily: 'Comfortaa', color:"none"}}>
+                                  
+                                <div class="dropdown">
+                                    <a href="/aboutMe" class="nav_ele" style={{textDecoration:"none", fontSize:"3vh", color:"none"}}>
+                                      About Me
+                                    </a>    
+                                    <div class="dropdown-content" >
+                                        <a href="/aboutMe/achievements" class="nav_ele" style={{textDecoration:"none", fontSize:"2.5vh", padding:"0"}}>
+                                        Achievements
+                                        </a> 
+                                    </div>
+                                </div>
                                 </Typography>
                         </a></li>
                     <li><a href="#">
                                 <Typography style={{fontFamily: 'Comfortaa',fontSize:"30px"}}>
+                                <a href="/consult" class="nav_ele" style={{textDecoration:"none", fontSize:"3vh", color:"none"}}>
                                     Consult   
+                                </a> 
                                 </Typography>
                         </a></li>
                     <li><a href="#">
                                 <Typography style={{fontFamily: 'Comfortaa',fontSize:"30px"}}>
-                                    Blog    
+                                <a href="/blog" class="nav_ele" style={{textDecoration:"none", fontSize:"3vh", color:"none"}}>
+                                    Blog 
+                                    </a>    
                                 </Typography>
                         </a></li>
                         <li><a href="#">
@@ -148,11 +162,13 @@ function Navbar() {
                                     {/* <button class="btn btn-secondary dropdown-toggle" style={{backgroundColor:"black",fontFamily: 'Comfortaa', color:"white", fontSize:"30px"}} type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                         {user_name}
                                     </button> */}
-                            <div class="dropdown-menu" aria-labelledby="dropdownMenu2" style={{backgroundColor:"grey", fontSize:"25px", alignItems:"center"}}>
+                            <div class="dropdown-menu" aria-labelledby="dropdownMenu2" style={{backgroundColor:"#222", fontSize:"2.5vh", alignItems:"center"}}>
                                 <LogoutHooks />
                             </div>
                             </div>
-                                    :<LoginHooks />
+                                    :
+                                    <div  style={{backgroundColor:"#222", fontSize:"3vh", paddingTop:"1vh"}}>
+                                    <LoginHooks /></div>
                                 }
                         </a></li>
                     </ul>

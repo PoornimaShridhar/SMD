@@ -31,6 +31,8 @@ import { CommentSharp } from '@material-ui/icons';
 import { InstapaperShareButton, FacebookShareButton, 
     TwitterShareButton,  LinkedinShareButton,
     FacebookIcon,  LinkedinIcon, TwitterIcon,} from "react-share";
+import ReactDOMServer from 'react-dom/server';
+import Html2ReactParser from 'html-to-react/lib/parser';
 
 export default function BlogPage(props) {
     let { id } = useParams();
@@ -44,7 +46,7 @@ export default function BlogPage(props) {
     const [threadLikes, setThreadLikes] = useState([])
     const [commentLikes, setCommentLikes] = useState([])
     const [replyLikes, setReplyLikes] = useState([])
-    const [user_id, setUserId] = useState(0);
+    const [user_id, setUserId] = useState(0)
     const [user_list, setUserList] = useState([])
     const [liked, setLiked] = useState(true);
     const [loadingcomment, setLoadingcomment] = useState(true);
@@ -61,7 +63,7 @@ export default function BlogPage(props) {
     const [updatecomment, setUpdatecomment] = useState("")
 
     console.log("props", props)
-
+   
     // @csrf_exempt
     useEffect(() => {
         if (loadingthread) {
@@ -95,10 +97,12 @@ export default function BlogPage(props) {
                     }));
 
                     console.log(thread, "Blog")
+                    
+                    console.log("%%%%%%%%%%%%         %%%%%%user_id%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%", user_id)
                 })
 
         }
-
+                    
         // } 
 
         if (loadingcomment) {
@@ -223,6 +227,7 @@ export default function BlogPage(props) {
 
             }
 
+            console.log("thread id : ", thread.id)
             if(loadinguser){
                     // comment.forEach((c)=>{
                     //     if (!threadUsers.includes(c.fields.created_by)){
@@ -259,7 +264,7 @@ export default function BlogPage(props) {
                       
                     comment.map((c)=>{
                         console.log(c.created_by,"c.created_by")
-                        if (email==c.created_by){
+                        if (d.fields.email==c.created_by){
                             console.log("inside setting image")
                             c.image = d.fields.image
                             // c.image = "http://0.0.0.0:8004/static/user_images/ADoctorAHealer.jpg"
@@ -268,7 +273,7 @@ export default function BlogPage(props) {
                     // setComment(comment)
                     reply.map((r)=>{
                         if (d.pk==r.fields.created_by){
-                            r.image = d.fields.image
+                            r.fields.image = d.fields.image
                         }
                     })
                     console.log(comment, "comment after adding image")
@@ -999,18 +1004,14 @@ export default function BlogPage(props) {
              })
     }
 
+    const htmlInput = thread.content;
+    const htmlToReactParser = new Html2ReactParser();
+    const reactElement = htmlToReactParser.parse(htmlInput);
 
     return (
         <Container>
             {/* <Navbar {...props} user={user}/> */}
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
+            
             <br />
             <br />
             <br />
@@ -1019,7 +1020,7 @@ export default function BlogPage(props) {
                 <img src={thread.image} data="image/jpg;base64,iVBOR...." alt="Nature" style={{ width: '50%', marginTop: '20px' }} />
                 <div className="w3-container">
                     <h2><b>{thread.title}</b></h2>
-                    <h4 > {thread.created_by} <span className="w3-opacity">{thread.created_at}</span></h4>
+                    <h4 ><span className="w3-opacity">{thread.created_at}</span></h4>
                     <div align="center">
                         <hr style={{
                             height: "1px",
@@ -1030,8 +1031,8 @@ export default function BlogPage(props) {
                 </div>
 
                 <div className="w3-container" align="left">
-                    <Typography variant="h6" style={{ margin: "20px" }}>
-                        {thread.content}
+                    <Typography variant="h4" style={{ margin: "20px" }}>
+                        {reactElement}
                     </Typography>
                     <hr style={{
                         marginLeft: 5,
@@ -1130,11 +1131,11 @@ export default function BlogPage(props) {
                             
                         </Grid>
                         <Grid item style={{ marginLeft: "20px" }}>
-                            <TextField id="input-with-icon-grid" label="Write a comment" onChange={ saveComment } value={commentText}
+                            <TextField id="input-with-icon-grid" label="Write a comment" style={{width:"80vh"}} onChange={ saveComment } value={commentText}
                             />
-                            {visible == true ? email!="undefined"? <button onClick={postComment}>
+                            {visible == true ? email!="undefined"? <Button onClick={postComment}>
                                 Post
-                            </button> :<LoginHooks/>
+                            </Button> :<LoginHooks/>
                             :null
                                }
                             {/* <Button onClick={()=>post_data()} >Post</Button> */}
@@ -1148,24 +1149,24 @@ export default function BlogPage(props) {
                             <div>
                                 <Grid  container style={{ marginLeft: '50px' }}>
                                     <Grid xs={12} sm={1} item>
-                                        <Avatar alt="" src={m.image}/>
+                                        <Avatar alt="" src = {String(m.image)} />
                                         {/* <Avatar alt="" src={} /> */}
                                     </Grid>
-                                    <Grid xs={12} sm={8} item align="left">
+                                    <Grid xs={12} sm={8} item align="left" >
                                         <Typography>
-                                            {m.created_by}
+                                            {m.user_who_replied}
                                         </Typography>
                                         <Typography variant="subtitle2" className="w3-opacity">
                                             {m.created_at}
                                         </Typography>
                                     </Grid>
-                                    {localStorage.getItem("user_email")==m.created_by?
+                                    {localStorage.getItem("id")==m.created_by?
                                             <Grid xs={12} sm={1} item>
                                             <div class="dropdown">
                                                     <button class="dropbtn"><SettingsIcon fontSize="large"/></button>
-                                                    <div class="dropdown-content">
-                                                    <button style={{border:"none", backgroundColor:"#f9f9f9"}} id = {m.id} onClick={EditComment}>Edit</button> <br /> <br />
-                                                   <button style={{border:"none", backgroundColor:"#f9f9f9"}} id = {m.id} onClick={deleteComment}>Delete</button>
+                                                    <div class="dropdown-content" style={{backgroundColor:"white"}}>
+                                                    <button style={{border:"none", backgroundColor:"white", color:"black", fontSize:"15px",fontWeight:"500", marginBottom:"0px", paddingBottom:"0px"}} id = {m.id} onClick={EditComment}>Edit</button> <hr />
+                                                   <button style={{border:"none", backgroundColor:"white", color:"black", fontSize:"15px",fontWeight:"500", marginTop:"0px", paddingTop:"0px"}} id = {m.id} onClick={deleteComment}>Delete</button>
                                                 </div>
                                             </div>
                                         </Grid>:null
@@ -1206,8 +1207,8 @@ export default function BlogPage(props) {
                                     <Grid item xs={12} sm={1}></Grid>
                                     <Grid item xs={12} sm={3}>
                                     {m.id==replyToggle?
-                                            <div><TextField id="input-with-icon-grid" label="Write a comment" onChange={ saveReply } value={replyText} />
-                                            <Button style={{marginLeft:"50px"}} id ={m.id} onClick={postReply}>Post</Button></div>
+                                            <div><TextField id="input-with-icon-grid" label="Write a reply" style={{width:"20vh"}} onChange={ saveReply } value={replyText} />
+                                            <Button id ={m.id} onClick={postReply}>Post</Button></div>
                                             :null
                                        } 
                                     </Grid>
@@ -1220,12 +1221,12 @@ export default function BlogPage(props) {
                                             <div style={{ borderLeft: "1px solid grey", marginLeft: "100px" }}>
                                                 <Grid container xs={12} sm={2} style={{ marginLeft: '50px' }}>
                                                     <Grid item>
-                                                        <Avatar alt="Remy Sharp" src={r.image} />
+                                                        <Avatar alt="Remy Sharp" src={String(r.fields.image)} />
                                                     </Grid>
-                                                    <Grid item xs={12} sm={7} style={{ marginLeft: "20px" }}>
+                                                    <Grid item xs={12} sm={7} style={{ marginLeft: "2vh" }}>
                                                         <Typography>
                                                             {/* Dr. Bharat Kumar B */}
-                                                            {r.fields.created_by}
+                                                            {r.fields.user_who_replied}
                                                         </Typography>
                                                         <Typography variant="subtitle2" className="w3-opacity">
                                                             {/* 18th June, 2021 */}
@@ -1235,10 +1236,10 @@ export default function BlogPage(props) {
                                                     {user_id==r.fields.created_by?
                                                                 <Grid xs={12} sm={1} item>
                                                                 <div class="dropdown">
-                                                                        <button class="dropbtn" style={{paddingLeft:"670px"}}><SettingsIcon fontSize="large"/></button>
-                                                                        <div class="dropdown-content">
-                                                                        <button style={{border:"none", backgroundColor:"#f9f9f9"}} id = {r.pk} onClick={EditReply}>Edit</button> <br /> <br />
-                                                                    <button style={{border:"none", backgroundColor:"#f9f9f9"}} id = {r.pk} onClick={DeleteReply}>Delete</button>
+                                                                        <button class="dropbtn" style={{marginLeft:"67vh"}}><SettingsIcon fontSize="large"/></button>
+                                                                        <div class="dropdown-content" style={{backgroundColor:"white",marginLeft:"67vh"}}>
+                                                                        <button style={{border:"none", backgroundColor:"white", color:"black", fontSize:"15px",fontWeight:"500", marginBottom:"0px", paddingBottom:"0px"}} id = {r.pk} onClick={EditReply}>Edit</button> <hr /> 
+                                                                    <button style={{border:"none", backgroundColor:"white", color:"black", fontSize:"15px",fontWeight:"500", marginTop:"0px", paddingTop:"0px"}} id = {r.pk} onClick={DeleteReply}>Delete</button>
                                                                     </div>
                                                                 </div>
                                                             </Grid>:null

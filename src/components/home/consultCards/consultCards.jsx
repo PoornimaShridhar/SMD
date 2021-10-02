@@ -125,6 +125,7 @@ export const BlogCardDemo = React.memo(function BlogCard() {
         list1.map((l1) =>
         
         <Grid item xs={12} sm={3} style={{margin:"2vh", fontFamily: "Comfortaa", }}>
+          <a href="/consult" style={{textDecoration:"none"}}>
             <Card className={cx(styles.root, shadowStyles.root)}>
         
             <CardMedia
@@ -143,6 +144,7 @@ export const BlogCardDemo = React.memo(function BlogCard() {
             </CardContent>
         
             </Card>
+            </a>
             </Grid>
             )
         }</Grid>
