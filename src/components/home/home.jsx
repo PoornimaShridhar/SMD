@@ -90,7 +90,7 @@ function Home() {
 
     const postEmail=(e)=>{
     
-        var base_url = 'http://0.0.0.0:8004/blog/api/subscribers/add_email/'
+        var base_url = 'http://35.154.207.64/blog/api/subscribers/add_email/'
         var data = ""
        
         data = {

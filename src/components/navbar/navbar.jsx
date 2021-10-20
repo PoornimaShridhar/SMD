@@ -17,6 +17,7 @@ import Select from '@material-ui/core/Select';
 import NativeSelect from '@material-ui/core/NativeSelect';
 import { makeStyles } from '@material-ui/core/styles';
 import './navbar.scss';
+import {Link} from "react-router-dom";
 
 
 const useStyles = makeStyles((theme) => ({
@@ -124,29 +125,29 @@ function Navbar() {
                                 <Typography style={{marginRight:'20px',fontFamily: 'Comfortaa', color:"none"}}>
                                   
                                 <div class="dropdown">
-                                    <a href="/aboutMe" class="nav_ele" style={{textDecoration:"none", fontSize:"3vh", color:"none"}}>
+                                    <Link to="/aboutMe" className="nav_ele" style={{textDecoration:"none", fontSize:"3vh", color:"none"}}>
                                       About Me
-                                    </a>    
+                                    </Link>    
                                     <div class="dropdown-content" >
-                                        <a href="/aboutMe/achievements" class="nav_ele" style={{textDecoration:"none", fontSize:"2.5vh", padding:"0"}}>
+                                        <Link to="/aboutMe/achievements" class="nav_ele" style={{textDecoration:"none", fontSize:"2.5vh", padding:"0"}}>
                                         Achievements
-                                        </a> 
+                                        </Link> 
                                     </div>
                                 </div>
                                 </Typography>
                         </a></li>
                     <li><a href="#">
                                 <Typography style={{fontFamily: 'Comfortaa',fontSize:"30px"}}>
-                                <a href="/consult" class="nav_ele" style={{textDecoration:"none", fontSize:"3vh", color:"none"}}>
+                                <Link to="/consult" class="nav_ele" style={{textDecoration:"none", fontSize:"3vh", color:"none"}}>
                                     Consult   
-                                </a> 
+                                </Link> 
                                 </Typography>
                         </a></li>
                     <li><a href="#">
                                 <Typography style={{fontFamily: 'Comfortaa',fontSize:"30px"}}>
-                                <a href="/blog" class="nav_ele" style={{textDecoration:"none", fontSize:"3vh", color:"none"}}>
+                                <Link to="/blog" class="nav_ele" style={{textDecoration:"none", fontSize:"3vh", color:"none"}}>
                                     Blog 
-                                    </a>    
+                                    </Link>    
                                 </Typography>
                         </a></li>
                         <li><a href="#">
