@@ -21,7 +21,8 @@ import BlogCardDemo from './consultCards/consultCards';
 import smd_logo from "./assets/smd_logo_black.png";
 import kinesis_logo from "./assets/kinesis_logo.png";
 import medifit_logo from "./assets/medifit_logo.png";
-import complete_logo from "./assets/Complete_logo_with_headings.png"
+import complete_logo from "./assets/Complete_logo_with_headings.png";
+import {Link} from "react-router-dom";
 
 function rand() {
     return Math.round(Math.random() * 20) - 10;
@@ -198,12 +199,14 @@ function Home() {
                                         <div style={{fontWeight:"600"}} class="mbbs">MBBS, PGDSM (Sports Medicine)</div>
                                     </div>
 
+                                    <Link to="/aboutMe">
                                     <Button variant='' color="secondary" style={{
                                         marginLeft: "8vw",
                                         fontFamily: "Comfortaa", fontWeight: "600", background: "#fff1d0"
                                     }}>
                                         <br />
                                         <div class="read" >Read More...</div></Button>
+                                        </Link>
                                         </div>
                                 </Grid>
                                 <Grid item md={4} style={{marginTop:"0"}}>
