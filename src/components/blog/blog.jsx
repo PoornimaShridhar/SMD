@@ -164,7 +164,7 @@ export const Blog = React.memo(
         }, [credentials, threadLikes, email, id, modalShow])
 
         const viewed = (e) => {
-            alert("inside viewed function")
+            // alert("inside viewed function")
             var base_url = 'http://35.154.207.64/blog/api/blog/' + e.target.id + '/update_thread/'
             var data = []
             credentials.forEach((c) => {

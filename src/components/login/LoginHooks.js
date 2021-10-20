@@ -64,10 +64,10 @@ function LoginHooks() {
       };
 
   const onFailure = (res) => {
-    console.log('Login failed: res:', res);
-    alert(
-      `Failed to login.`
-    );
+    // console.log('Login failed: res:', res);
+    // alert(
+    //   `Failed to login.`
+    // );
   };
 
   const { signIn } = useGoogleLogin({
@@ -81,7 +81,7 @@ function LoginHooks() {
   });
 
   return (
-    <button onClick={signIn} className="login" style={{color:"#9D9D9D", backgroundColor:"#222", fontSize:"3vh", border:"none"}}>
+    <button onClick={signIn} className="login" style={{color:"#9D9D9D", backgroundColor:"#222", fontSize:"2.7vh", border:"none"}}>
 
       <span className="buttonText" >Login</span>
       {

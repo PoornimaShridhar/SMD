@@ -18,6 +18,7 @@ import NativeSelect from '@material-ui/core/NativeSelect';
 import { makeStyles } from '@material-ui/core/styles';
 import './navbar.scss';
 import {Link} from "react-router-dom";
+import { FaGraduationCap } from "react-icons/fa";
 
 
 const useStyles = makeStyles((theme) => ({
@@ -128,14 +129,27 @@ function Navbar() {
                                     <Link to="/aboutMe" className="nav_ele" style={{textDecoration:"none", fontSize:"3vh", color:"none"}}>
                                       About Me
                                     </Link>    
-                                    <div class="dropdown-content" >
+                                    {/* <div class="dropdown-content" >
                                         <Link to="/aboutMe/achievements" class="nav_ele" style={{textDecoration:"none", fontSize:"2.5vh", padding:"0"}}>
                                         Achievements
                                         </Link> 
-                                    </div>
+                                    </div> */}
                                 </div>
                                 </Typography>
                         </a></li>
+
+                        <li><a href="#">
+                            <Typography style={{color:"white"}}>
+                            <Link to="/achievements"  style={{textDecoration:"none", fontSize:"3.8vh", padding:"0", color:"white"}}>
+                                <div style={{color:"white"}}>
+                                <FaGraduationCap class="cap"/>
+                                </div>
+                                </Link> 
+                            </Typography>
+
+                        
+                        </a></li>
+
                     <li><a href="#">
                                 <Typography style={{fontFamily: 'Comfortaa',fontSize:"30px"}}>
                                 <Link to="/consult" class="nav_ele" style={{textDecoration:"none", fontSize:"3vh", color:"none"}}>
@@ -150,8 +164,8 @@ function Navbar() {
                                     </Link>    
                                 </Typography>
                         </a></li>
-                        <li><a href="#">
-                        <Avatar src={user_image} />
+                        <li class="user_image1"><a href="#">
+                        <Avatar src={user_image} class="user_image1" />
                         </a></li>
                     <li><a href="#">
                                 {user_name!="undefined"?

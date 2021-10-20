@@ -8,7 +8,7 @@ const clientId =
 function LogoutHooks() {
   const onLogoutSuccess = (res) => {
     console.log('Logged out Success');
-    alert('Logged out Successfully ✌');
+    // alert('Logged out Successfully ✌');
     localStorage.setItem('user_email', undefined)
     localStorage.setItem('user_name', undefined)
     localStorage.setItem('user_image', undefined)

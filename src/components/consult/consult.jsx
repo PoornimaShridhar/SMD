@@ -233,6 +233,7 @@ import MedicalWeightLoss from './assets/MedicalweightLoss.jpeg';
 import AthleteHealth from './assets/AthleteHealthAnddoping.jpeg'
 import SportsNutrition from './assets/SportsNutrition.jpg';
 import "./consult.scss";
+import { BiRupee } from "react-icons/bi";
 
 
 const useStyles = makeStyles(() => ({
@@ -429,7 +430,7 @@ export const Consult = React.memo(function Consult() {
           Injuries are an inevitable part of an athlete's career, but most importantly 90% of the injuries are preventable. 
           They need a comprehensive end to end management which includes treatment, rehabilitation and prevention.          </Typography>
           <Typography variant="h4"  gutterBottom align="left" style={{fontFamily: 'Comfortaa', fontWeight:"600", margin:"30px" }}>
-            1000 Rs 
+            1000 <BiRupee />
           </Typography>
           <Typography variant="h2"  gutterBottom align="left" style={{fontFamily: 'Comfortaa', fontSize:'30px', margin:"30px" }}>
             <Button variant="contained" color="secondary">
@@ -451,7 +452,7 @@ export const Consult = React.memo(function Consult() {
           Aches and pain aren't just normal part of life that you have to live with. There is both a treatment and prevention 
           aspect to it which includes not just physical therapy but also a metabolic correction.          </Typography>
           <Typography variant="h4"  gutterBottom align="left" style={{fontFamily: 'Comfortaa', fontWeight:"600", margin:"30px" }}>
-            1000 Rs 
+            1000 <BiRupee />
           </Typography>
           <Typography variant="h2"  gutterBottom align="left" style={{fontFamily: 'Comfortaa', fontSize:'30px', margin:"30px" }}>
             <Button variant="contained" color="secondary">
@@ -474,7 +475,7 @@ export const Consult = React.memo(function Consult() {
           Also, the athletes need a prescription in which does not contain a prohibited substance or he/she risks 
           violating the WADA code.          </Typography>
           <Typography variant="h4"  gutterBottom align="left" style={{fontFamily: 'Comfortaa', fontWeight:"600", margin:"30px" }}>
-          1000 Rs
+          1000 <BiRupee />
           </Typography>
           <Typography variant="h2"  gutterBottom align="left" style={{fontFamily: 'Comfortaa', fontSize:'30px', margin:"30px" }}>
             <Button variant="contained" color="secondary">
@@ -496,7 +497,7 @@ export const Consult = React.memo(function Consult() {
           Obesity is a medical disorder and it needs to be treated like one. Eat less and move more isn't enough. 
           Medical weight loss is a specialised approach to lose weigh safely under medical supervision.          </Typography>
           <Typography variant="h4"  gutterBottom align="left" style={{fontFamily: 'Comfortaa',fontWeight:"600",  margin:"30px" }}>
-          1000 Rs 
+          1000 <BiRupee />
           </Typography>
           <Typography variant="h2"  gutterBottom align="left" style={{fontFamily: 'Comfortaa', fontSize:'30px', margin:"30px" }}>
             <Button variant="contained" color="secondary">
@@ -519,7 +520,7 @@ export const Consult = React.memo(function Consult() {
            Hence, a customized nutrition is mandatory for best results.
           Name of the program and content...with heirarchy          </Typography>
           <Typography variant="h4"  gutterBottom align="left" style={{fontFamily: 'Comfortaa', fontWeight:"600", margin:"30px" }}>
-          1000 Rs 
+          1000 <BiRupee />
           </Typography>
           <Typography variant="h2"  gutterBottom align="left" style={{fontFamily: 'Comfortaa', fontSize:'30px', margin:"30px" }}>
             <Button variant="contained" color="secondary">

@@ -82,12 +82,12 @@ export default function BlogPage(props) {
                     var str = ""
                     if (thread.image) {
 
-                        // var arr = thread.image.split('/')
-                        // console.log(arr, "Inside ,Str")
-                        // arr.splice(3, 0, "static")
-                        // str = arr.join("/")
+                        var arr = thread.image.split('/')
+                        console.log(arr, "Inside ,Str")
+                        // arr.splice(3, 0, "")
+                        str = arr.join("/")
 
-                        // console.log(str, "Inside ,Str")
+                        console.log(str, "Inside ,Str")
                     }
 
                     setThread((prevState) => ({
