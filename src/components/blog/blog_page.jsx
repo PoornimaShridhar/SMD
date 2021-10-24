@@ -69,7 +69,7 @@ export default function BlogPage(props) {
         if (loadingthread) {
             // if(props.id)
             // {
-            fetch('http://35.154.207.64/blog/api/blog/'+id )
+            fetch('http://0.0.0.0:8004/blog/api/blog/'+id )
                 .then((result) => result.json())
                 .then((res) => {
                     setThread(res)
@@ -106,8 +106,8 @@ export default function BlogPage(props) {
         // } 
 
         if (loadingcomment) {
-            // fetch('http://35.154.207.64/blog/api/comment/')
-            fetch('http://35.154.207.64/blog/api/comment/'+ id +'/list_comments/')
+            // fetch('http://0.0.0.0:8004/blog/api/comment/')
+            fetch('http://0.0.0.0:8004/blog/api/comment/'+ id +'/list_comments/')
                 .then((result) => result.json())
                 .then((res) => {
                     setComment(res)
@@ -141,7 +141,7 @@ export default function BlogPage(props) {
 
 
         if (loadingreply) {
-            fetch('http://35.154.207.64/blog/api/reply/'+ id +'/list_replies/')
+            fetch('http://0.0.0.0:8004/blog/api/reply/'+ id +'/list_replies/')
                 .then((result) => result.json())
                 .then((res) => {
                     setReply(res)
@@ -171,7 +171,7 @@ export default function BlogPage(props) {
                 // console.log(threadLikes,'Entry First')
 
                 setUserId(localStorage.getItem("id"))
-                fetch('http://35.154.207.64/blog/api/threadLikes/' + user_id +'/list_user_thread_likes_/')
+                fetch('http://0.0.0.0:8004/blog/api/threadLikes/' + user_id +'/list_user_thread_likes_/')
                 .then(response => response.json())
                 .then((data)=>{
                 console.log(data, "thread likes")
@@ -191,7 +191,7 @@ export default function BlogPage(props) {
                 // setThreadLikes(threadLikes)
                 })
 
-                fetch('http://35.154.207.64/blog/api/commentLikes/' + user_id +'/list_user_comment_likes_/')
+                fetch('http://0.0.0.0:8004/blog/api/commentLikes/' + user_id +'/list_user_comment_likes_/')
                 .then(response => response.json())
                 .then((data)=>{
                 console.log(data, "comment likes")
@@ -208,7 +208,7 @@ export default function BlogPage(props) {
                 console.log(commentLikes,"state var comment likes")
                 })
 
-                fetch('http://35.154.207.64/blog/api/replyLikes/' + user_id +'/list_user_reply_likes_/')
+                fetch('http://0.0.0.0:8004/blog/api/replyLikes/' + user_id +'/list_user_reply_likes_/')
                 .then(response => response.json())
                 .then((data)=>{
                 console.log(data, "reply likes")
@@ -242,7 +242,7 @@ export default function BlogPage(props) {
 
                     // const data = threadUsers
 
-                    fetch('http://35.154.207.64/blog/api/user/' + thread.id +'/fetch_users/')
+                    fetch('http://0.0.0.0:8004/blog/api/user/' + thread.id +'/fetch_users/')
                     .then(response => response.json())
                     .then((data)=>{
 
@@ -267,7 +267,7 @@ export default function BlogPage(props) {
                         if (d.fields.email==c.created_by){
                             console.log("inside setting image")
                             c.image = d.fields.image
-                            // c.image = "http://35.154.207.64/static/user_images/ADoctorAHealer.jpg"
+                            // c.image = "http://0.0.0.0:8004/static/user_images/ADoctorAHealer.jpg"
                         }
                     })
                     // setComment(comment)
@@ -292,8 +292,8 @@ export default function BlogPage(props) {
     const likedpost = (e) => {
            
         console.log("Liked Post", e.target.id)
-        var base_url1 = 'http://35.154.207.64/blog/api/blog/' + e.target.id + '/update_thread/'
-        var base_url2 = 'http://35.154.207.64/blog/api/threadLikes/'
+        var base_url1 = 'http://0.0.0.0:8004/blog/api/blog/' + e.target.id + '/update_thread/'
+        var base_url2 = 'http://0.0.0.0:8004/blog/api/threadLikes/'
         var data1 = []
         var data2 = []
 
@@ -345,7 +345,7 @@ export default function BlogPage(props) {
 
                     //  console.log(res, "***********************likes_result") 
                 setThreadLikes([])
-                fetch('http://35.154.207.64/blog/api/threadLikes/' + user_id +'/list_user_thread_likes_/')
+                fetch('http://0.0.0.0:8004/blog/api/threadLikes/' + user_id +'/list_user_thread_likes_/')
                 .then(response => response.json())
                 .then((data)=>{
                   console.log(data, "thread likes from liked function api")
@@ -369,8 +369,8 @@ export default function BlogPage(props) {
     const likedcomment = (e) => {
            
         console.log("Liked comment", e.target.id)
-        var base_url1 = 'http://35.154.207.64/blog/api/comment/' + e.target.id + '/update_comment/'
-        var base_url2 = 'http://35.154.207.64/blog/api/commentLikes/'
+        var base_url1 = 'http://0.0.0.0:8004/blog/api/comment/' + e.target.id + '/update_comment/'
+        var base_url2 = 'http://0.0.0.0:8004/blog/api/commentLikes/'
         var data1 = []
         var data2 = []
 
@@ -423,7 +423,7 @@ export default function BlogPage(props) {
 
                     //  console.log(res, "***********************likes_result") 
                 setCommentLikes([])
-                fetch('http://35.154.207.64/blog/api/commentLikes/' + user_id +'/list_user_comment_likes_/')
+                fetch('http://0.0.0.0:8004/blog/api/commentLikes/' + user_id +'/list_user_comment_likes_/')
                 .then(response => response.json())
                 .then((data)=>{
                   console.log(data, "comment likes from liked function api")
@@ -445,8 +445,8 @@ export default function BlogPage(props) {
     const unlikedcomment = (e) => {
            
         // console.log("Unliked Post", e.target.id)
-        var base_url1 = 'http://35.154.207.64/blog/api/comment/' + e.target.id + '/update_comment/'
-        // var base_url2 = 'http://35.154.207.64/blog/api/commentLikes/'
+        var base_url1 = 'http://0.0.0.0:8004/blog/api/comment/' + e.target.id + '/update_comment/'
+        // var base_url2 = 'http://0.0.0.0:8004/blog/api/commentLikes/'
         var data1 = []
         var data2 = []
 
@@ -485,7 +485,7 @@ export default function BlogPage(props) {
             {
                 console.log(res, "***********************unliked_result") 
                 var delete_id = ""
-                fetch('http://35.154.207.64/blog/api/commentLikes/')
+                fetch('http://0.0.0.0:8004/blog/api/commentLikes/')
                 .then((result) => result.json())
                 .then((res) => {
                     console.log(res,'Unliked Comments')
@@ -502,7 +502,7 @@ export default function BlogPage(props) {
                     })
 
                     //Delete Part
-                    var base_url2 = 'http://35.154.207.64/blog/api/commentLikes/'+delete_id
+                    var base_url2 = 'http://0.0.0.0:8004/blog/api/commentLikes/'+delete_id
 
                     fetch(base_url2, {
                         method: "DELETE",
@@ -520,7 +520,7 @@ export default function BlogPage(props) {
             })
                         //  console.log(res, "***********************unliked_result") 
                          setCommentLikes([])
-                         fetch('http://35.154.207.64/blog/api/commentLikes/' + user_id +'/list_user_comment_likes_/')
+                         fetch('http://0.0.0.0:8004/blog/api/commentLikes/' + user_id +'/list_user_comment_likes_/')
                          .then(response => response.json())
                          .then((data)=>{
                            console.log(data, "comment likes from unliked api")
@@ -544,8 +544,8 @@ export default function BlogPage(props) {
     const likedreply = (e) => {
            
         console.log("Liked comment", e.target.id)
-        var base_url1 = 'http://35.154.207.64/blog/api/reply/' + e.target.id + '/update_reply/'
-        var base_url2 = 'http://35.154.207.64/blog/api/replyLikes/'
+        var base_url1 = 'http://0.0.0.0:8004/blog/api/reply/' + e.target.id + '/update_reply/'
+        var base_url2 = 'http://0.0.0.0:8004/blog/api/replyLikes/'
         var data1 = []
         var data2 = []
 
@@ -588,7 +588,7 @@ export default function BlogPage(props) {
                 })
                 .then(res => {
                 setReplyLikes([])
-                fetch('http://35.154.207.64/blog/api/replyLikes/' + user_id +'/list_user_reply_likes_/')
+                fetch('http://0.0.0.0:8004/blog/api/replyLikes/' + user_id +'/list_user_reply_likes_/')
                 .then(response => response.json())
                 .then((data)=>{
                   console.log(data, "reply likes from liked function api")
@@ -612,8 +612,8 @@ export default function BlogPage(props) {
     const unlikedreply = (e) => {
            
         // console.log("Unliked Post", e.target.id)
-        var base_url1 = 'http://35.154.207.64/blog/api/reply/' + e.target.id + '/update_reply/'
-        // var base_url2 = 'http://35.154.207.64/blog/api/commentLikes/'
+        var base_url1 = 'http://0.0.0.0:8004/blog/api/reply/' + e.target.id + '/update_reply/'
+        // var base_url2 = 'http://0.0.0.0:8004/blog/api/commentLikes/'
         var data1 = []
         var data2 = []
 
@@ -651,7 +651,7 @@ export default function BlogPage(props) {
             {
                 console.log(res, "***********************unliked_result") 
                 var delete_id = ""
-                fetch('http://35.154.207.64/blog/api/replyLikes/')
+                fetch('http://0.0.0.0:8004/blog/api/replyLikes/')
                 .then((result) => result.json())
                 .then((res) => {
                     console.log(res,'Unliked replies')
@@ -669,7 +669,7 @@ export default function BlogPage(props) {
                     )
 
                     //Delete Part
-                    var base_url2 = 'http://35.154.207.64/blog/api/replyLikes/'+delete_id
+                    var base_url2 = 'http://0.0.0.0:8004/blog/api/replyLikes/'+delete_id
 
                     fetch(base_url2, {
                         method: "DELETE",
@@ -687,7 +687,7 @@ export default function BlogPage(props) {
             })
                         //  console.log(res, "***********************unliked_result") 
                          setReplyLikes([])
-                         fetch('http://35.154.207.64/blog/api/replyLikes/' + user_id +'/list_user_reply_likes_/')
+                         fetch('http://0.0.0.0:8004/blog/api/replyLikes/' + user_id +'/list_user_reply_likes_/')
                          .then(response => response.json())
                          .then((data)=>{
                            console.log(data, "reply likes from unliked api")
@@ -715,7 +715,7 @@ export default function BlogPage(props) {
     }
 
     const unlikedpost = (e) => {
-        var base_url1 = 'http://35.154.207.64/blog/api/blog/' + e.target.id + '/update_thread/'
+        var base_url1 = 'http://0.0.0.0:8004/blog/api/blog/' + e.target.id + '/update_thread/'
         
         var data1 = []
         var data2 = []
@@ -748,7 +748,7 @@ export default function BlogPage(props) {
             {
                 console.log(res, "***********************unliked_result") 
                 var delete_id = ""
-                fetch('http://35.154.207.64/blog/api/threadLikes/')
+                fetch('http://0.0.0.0:8004/blog/api/threadLikes/')
                 .then((result) => result.json())
                 .then((res) => {
                     console.log(res,'Unliked Threads')
@@ -766,7 +766,7 @@ export default function BlogPage(props) {
                     )
 
                     //Delete Part
-                    var base_url2 = 'http://35.154.207.64/blog/api/threadLikes/'+delete_id
+                    var base_url2 = 'http://0.0.0.0:8004/blog/api/threadLikes/'+delete_id
 
                     fetch(base_url2, {
                         method: "DELETE",
@@ -784,7 +784,7 @@ export default function BlogPage(props) {
             })
                         //  console.log(res, "***********************unliked_result") 
                          setThreadLikes([])
-                         fetch('http://35.154.207.64/blog/api/threadLikes/' + user_id +'/list_user_thread_likes_/')
+                         fetch('http://0.0.0.0:8004/blog/api/threadLikes/' + user_id +'/list_user_thread_likes_/')
                          .then(response => response.json())
                          .then((data)=>{
                            console.log(data, "thread likes from unliked api")
@@ -814,7 +814,7 @@ export default function BlogPage(props) {
     }
 
     const postComment=(e)=>{
-        var base_url = 'http://35.154.207.64/blog/api/comment/create_comment/'
+        var base_url = 'http://0.0.0.0:8004/blog/api/comment/create_comment/'
         var data = []
         data = {
             thread_id: thread.id,
@@ -855,7 +855,7 @@ export default function BlogPage(props) {
     }
 
     const postUpdatedComment=(e)=>{
-        var base_url = 'http://35.154.207.64/blog/api/comment/' + e.target.id +'/update_comment/'
+        var base_url = 'http://0.0.0.0:8004/blog/api/comment/' + e.target.id +'/update_comment/'
         var data = []
         data = {
             thread_id: thread.id,
@@ -880,7 +880,7 @@ export default function BlogPage(props) {
     }
 
     const deleteComment=(e)=>{
-        var base_url = "http://35.154.207.64/blog/api/comment/" + e.target.id + "/delete_comment/"
+        var base_url = "http://0.0.0.0:8004/blog/api/comment/" + e.target.id + "/delete_comment/"
         fetch(base_url, {
             method: "DELETE",
             headers: {
@@ -912,7 +912,7 @@ export default function BlogPage(props) {
     }
 
     const postReply=(e)=>{
-        var base_url = 'http://35.154.207.64/blog/api/reply/create_reply/'
+        var base_url = 'http://0.0.0.0:8004/blog/api/reply/create_reply/'
         var data = []
         data = {
             comment_id: e.target.id,
@@ -954,7 +954,7 @@ export default function BlogPage(props) {
     }
 
     const postUpdatedReply=(e)=>{
-        var base_url = 'http://35.154.207.64/blog/api/reply/' + e.target.id +'/update_reply/'
+        var base_url = 'http://0.0.0.0:8004/blog/api/reply/' + e.target.id +'/update_reply/'
         var data = []
         var a = ""
         reply.forEach((r)=>{
@@ -989,7 +989,7 @@ export default function BlogPage(props) {
     }
 
     const DeleteReply =(e)=>{
-        var base_url = "http://35.154.207.64/blog/api/reply/" + e.target.id + "/delete_reply/"
+        var base_url = "http://0.0.0.0:8004/blog/api/reply/" + e.target.id + "/delete_reply/"
         fetch(base_url, {
             method: "DELETE",
             headers: {
@@ -1023,9 +1023,11 @@ export default function BlogPage(props) {
                     <h4 ><span className="w3-opacity">{thread.created_at}</span></h4>
                     <div align="center">
                         <hr style={{
+                            marginLeft: 5,
+                            marginRight: 5,
                             height: "1px",
                             backgroundColor: "grey",
-                            width: '500px'
+                            width: '30vh'
                         }} />
                     </div>
                 </div>
@@ -1131,7 +1133,7 @@ export default function BlogPage(props) {
                             
                         </Grid>
                         <Grid item style={{ marginLeft: "20px" }}>
-                            <TextField id="input-with-icon-grid" label="Write a comment" style={{width:"80vh"}} onChange={ saveComment } value={commentText}
+                            <TextField id="input-with-icon-grid" label="Write a comment" style={{width:"40vw"}} onChange={ saveComment } value={commentText}
                             />
                             {visible == true ? email!="undefined"? <Button onClick={postComment}>
                                 Post
@@ -1152,7 +1154,7 @@ export default function BlogPage(props) {
                                         <Avatar alt="" src = {String(m.image)} />
                                         {/* <Avatar alt="" src={} /> */}
                                     </Grid>
-                                    <Grid xs={12} sm={8} item align="left" >
+                                    <Grid xs={12} sm={8} item align="left" class="user_details">
                                         <Typography>
                                             {m.user_who_replied}
                                         </Typography>
@@ -1163,7 +1165,7 @@ export default function BlogPage(props) {
                                     {localStorage.getItem("id")==m.created_by?
                                             <Grid xs={12} sm={1} item>
                                             <div class="dropdown">
-                                                    <button class="dropbtn"><SettingsIcon fontSize="large"/></button>
+                                            <button class="dropbtn"><SettingsIcon fontSize="large"/></button>
                                                     <div class="dropdown-content" style={{backgroundColor:"white"}}>
                                                     <button style={{border:"none", backgroundColor:"white", color:"black", fontSize:"15px",fontWeight:"500", marginBottom:"0px", paddingBottom:"0px"}} id = {m.id} onClick={EditComment}>Edit</button> <hr />
                                                    <button style={{border:"none", backgroundColor:"white", color:"black", fontSize:"15px",fontWeight:"500", marginTop:"0px", paddingTop:"0px"}} id = {m.id} onClick={deleteComment}>Delete</button>
@@ -1205,7 +1207,7 @@ export default function BlogPage(props) {
                                 </Grid>
                                 <Grid container xs={12} style={{paddingBottom:"25px"}}>
                                     <Grid item xs={12} sm={1}></Grid>
-                                    <Grid item xs={12} sm={3}>
+                                    <Grid item xs={12} sm={3} class="reply_textfield">
                                     {m.id==replyToggle?
                                             <div><TextField id="input-with-icon-grid" label="Write a reply" style={{width:"20vh"}} onChange={ saveReply } value={replyText} />
                                             <Button id ={m.id} onClick={postReply}>Post</Button></div>

@@ -165,7 +165,7 @@ function Navbar() {
                                 </Typography>
                         </a></li>
                         <li class="user_image1"><a href="#">
-                        <Avatar src={user_image} class="user_image1" />
+                        <Avatar src={user_image} />
                         </a></li>
                     <li><a href="#">
                                 {user_name!="undefined"?

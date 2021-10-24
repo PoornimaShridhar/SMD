@@ -91,7 +91,7 @@ function Home() {
 
     const postEmail=(e)=>{
     
-        var base_url = 'http://35.154.207.64/blog/api/subscribers/add_email/'
+        var base_url = 'http://0.0.0.0:8004/blog/api/subscribers/add_email/'
         var data = ""
        
         data = {
@@ -179,7 +179,7 @@ function Home() {
                                 textShadow: "5px 5px 5px white, 5px 5px 5px white, 5px 5px 5px black"
                             }}>
                                 <div class="doc_des">
-                                    <div style={{ fontSize: "2vw", }}>Hi !</div>
+                                    <div class="hi">Hi !</div>
 
                                     This is Dr. Bharath Kumar B. I am an Allopathic Doctor specialized
                                     <br />in Sports Medicine.
@@ -299,7 +299,7 @@ function Home() {
                 {/* </Grid>
                 </Grid> */}
             </Grid>
-           
+
             <div style={{ backgroundColor: "white" }}>
                 <br /> <br />
                 <Grid container>
