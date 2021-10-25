@@ -71,8 +71,8 @@ export const Blog = React.memo(
 
         useEffect(() => {
             if (loadingcred) {
-                // fetch('http://0.0.0.0:8004/blog/api/blog/1/get_threads')
-                fetch('http://0.0.0.0:8004/blog/api/blog/')
+                // fetch('/blog/api/blog/1/get_threads')
+                fetch('/blog/api/blog/')
                     .then((result) => result.json())
                     .then((res) => {
                         setLoadingcred(false)
@@ -84,7 +84,7 @@ export const Blog = React.memo(
             setLoadingcred(true)
 
             if (loadingCommentsFromThread){
-                fetch('http://0.0.0.0:8004/blog/api/blog/1/get_threads')
+                fetch('/blog/api/blog/1/get_threads/')
                     .then((result) => result.json())
                     .then((res) => {
                         setLoadingCommentsFromThread(false)
@@ -131,7 +131,7 @@ export const Blog = React.memo(
                 if (email!="undefined")
                 {
                     setId(localStorage.getItem("id"))
-                    fetch('http://0.0.0.0:8004/blog/api/threadLikes/' + id +'/list_user_thread_likes_/')
+                    fetch('/blog/api/threadLikes/' + id +'/list_user_thread_likes_/')
                     .then(response => response.json())
                     .then((data)=>{
                     console.log(data, "thread likes")
@@ -165,7 +165,7 @@ export const Blog = React.memo(
 
         const viewed = (e) => {
             // alert("inside viewed function")
-            var base_url = 'http://0.0.0.0:8004/blog/api/blog/' + e.target.id + '/update_thread/'
+            var base_url = '/blog/api/blog/' + e.target.id + '/update_thread/'
             var data = []
             credentials.forEach((c) => {
                 // if (c.pk == e.target.id)
@@ -204,8 +204,8 @@ export const Blog = React.memo(
         const likedpost = (e) => {
            
             console.log("Liked Post", e.target.id)
-            var base_url1 = 'http://0.0.0.0:8004/blog/api/blog/' + e.target.id + '/update_thread/'
-            var base_url2 = 'http://0.0.0.0:8004/blog/api/threadLikes/'
+            var base_url1 = '/blog/api/blog/' + e.target.id + '/update_thread/'
+            var base_url2 = '/blog/api/threadLikes/'
             var data1 = []
             var data2 = []
 
@@ -253,7 +253,7 @@ export const Blog = React.memo(
                     })
                     .then(res => {
                     setThreadLikes([])
-                    fetch('http://0.0.0.0:8004/blog/api/threadLikes/' + id +'/list_user_thread_likes_/')
+                    fetch('/blog/api/threadLikes/' + id +'/list_user_thread_likes_/')
                     .then(response => response.json())
                     .then((data)=>{
                       console.log("..................................................................................................")
@@ -286,7 +286,7 @@ export const Blog = React.memo(
         const unliked = (e) => {
             console.log("..................................................................................................")
             console.log("Unliked Post", e.target.id)
-            var base_url1 = 'http://0.0.0.0:8004/blog/api/blog/' + e.target.id + '/update_thread/'
+            var base_url1 = '/blog/api/blog/' + e.target.id + '/update_thread/'
             
             var data1 = []
             var data2 = []
@@ -325,7 +325,7 @@ export const Blog = React.memo(
                     console.log("..................................................................................................")
                     console.log(res, "***********************unliked_result") 
                     var delete_id=""
-                    fetch('http://0.0.0.0:8004/blog/api/threadLikes/')
+                    fetch('/blog/api/threadLikes/')
                     .then((result) => result.json())
                     .then((res) => {
                         console.log(res,'Unliked Threads')
@@ -347,7 +347,7 @@ export const Blog = React.memo(
                         )
 
                         //Delete Part
-                        var base_url2 = 'http://0.0.0.0:8004/blog/api/threadLikes/'+delete_id
+                        var base_url2 = '/blog/api/threadLikes/'+delete_id
 
                         fetch(base_url2, {
                             method: "DELETE",
@@ -360,7 +360,7 @@ export const Blog = React.memo(
                         .then(res => {
                             //  console.log(res, "***********************unliked_result") 
                              setThreadLikes([])
-                             fetch('http://0.0.0.0:8004/blog/api/threadLikes/' + id +'/list_user_thread_likes_/')
+                             fetch('/blog/api/threadLikes/' + id +'/list_user_thread_likes_/')
                              .then(response => response.json())
                              .then((data)=>{
                                console.log("..................................................................................................")

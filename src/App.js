@@ -16,13 +16,14 @@ function App() {
       <Router basename={process.env.PUBLIC_URL}>
         <Switch>
           
-          <Route exact from="/aboutMe" render={props => <div> <Navbar {...props}/><Journey /><Footer/></div> }/>
-          <Route exact from="/achievements" render={props => <div> <Navbar {...props}/><Achievements /><Footer/></div> }/>
-          <Route exact from="/blog" render={props => <div> <Navbar {...props}/><Blog /><br/><br/><br/><br/><br/><br/><br/><br/><br/><br /><Footer/></div> }/>
-          <Route exact from="/blog/blogpage/:id" render={props => <div> <Navbar {...props}/><BlogPage {...props}/><Footer/></div> }/>
-          <Route exact from="/consult" render={props => <div> <Navbar {...props}/><Consult /><Footer/></div> }/>
-          <Route exact from="/testimonials" render={props => <div> <Navbar {...props}/><Testimonials /></div> }/>
-          <Route exact from="/" render={props => <div> <Navbar {...props}/><Home /><Footer/></div> }/>
+          <Route exact path="/aboutMe" render={props => <div> <Navbar {...props}/><Journey /><Footer/></div> }/>
+          <Route exact path="/achievements" render={props => <div> <Navbar {...props}/><Achievements /><Footer/></div> }/>
+          <Route exact path="/blog" render={props => <div> <Navbar {...props}/><Blog /><br/><br/><br/><br/><br/><br/><br/><br/><br/><br /><Footer/></div> }/>
+          <Route exact path="/blog/blogPage/:id" render={props => <div> <Navbar {...props}/><BlogPage {...props}/><Footer/></div> }/>
+          <Route exact path="/consult" render={props => <div> <Navbar {...props}/><Consult /><Footer/></div> }/>
+          <Route exact path="/testimonials" render={props => <div> <Navbar {...props}/><Testimonials /></div> }/>
+          <Route exact path="/" render={props => <div> <Navbar {...props}/><Home /><Footer/></div> }/>
+          <Route render={props => <div> <Navbar {...props}/><Home /><Footer/></div> }/>
         </Switch>
       </Router>
       

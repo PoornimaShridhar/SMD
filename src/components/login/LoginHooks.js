@@ -36,7 +36,7 @@ function LoginHooks() {
     console.log(JSON.stringify(data), "JSON stringified data****************************888")
     console.log(typeof(users.email),"image url type")
     console.log(u,"^^^^^^^^^^^^^^^^^^^^getting from local storage^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^")
-    fetch('http://0.0.0.0:8004/blog/api/user/create_user/',{
+    fetch('/blog/api/user/create_user/',{
       method: "POST",
       headers:{
         'Accept': 'application/json',

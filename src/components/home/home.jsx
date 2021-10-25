@@ -66,7 +66,8 @@ const useStyles = makeStyles((theme) => ({
 
 }));
 
-function Home() {
+function Home(props) {
+    console.log("HOMEPAGE", props);
     const classes = useStyles();
     const styles = useN03TextInfoContentStyles();
     const shadowStyles = useLightTopShadowStyles();
@@ -91,7 +92,7 @@ function Home() {
 
     const postEmail=(e)=>{
     
-        var base_url = 'http://0.0.0.0:8004/blog/api/subscribers/add_email/'
+        var base_url = '/blog/api/subscribers/add_email/'
         var data = ""
        
         data = {
