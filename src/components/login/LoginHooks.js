@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useGoogleLogin } from 'react-google-login';
 import Navbar from "../navbar/navbar";
 import BlogPage from "../blog/blog_page";
-import './LoginHooks.scss';
+import './LoginHooks.css';
 
 // refresh token
 import { refreshTokenSetup } from "../../utils/refreshToken"

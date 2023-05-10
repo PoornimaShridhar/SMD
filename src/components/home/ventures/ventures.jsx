@@ -1,6 +1,5 @@
 import React from 'react';
 import NoSsr from '@material-ui/core/NoSsr';
-import GoogleFontLoader from 'react-google-font-loader';
 import { makeStyles } from '@material-ui/core/styles';
 import Avatar from '@material-ui/core/Avatar';
 import Box from '@material-ui/core/Box';
@@ -115,9 +114,6 @@ export const News3CardDemo = React.memo(function News3Card() {
   const mediaStyles = useCoverCardMediaStyles();
   return (
     <>
-      <NoSsr>
-        <GoogleFontLoader fonts={[{ font: 'Sen', weights: [400, 800] }]} />
-      </NoSsr>
       <Card className={styles.card}>
         <Box className={styles.main} minHeight={350} minWidth={150} position={'relative'}>
           <CardMedia

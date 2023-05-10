@@ -1,6 +1,6 @@
 import React from 'react';
 import { useGoogleLogout } from 'react-google-login';
-import './LogoutHooks.scss';
+import './LogoutHooks.css';
 
 const clientId =
   '739780891982-42f11bv2adht5jrl2u93sig77rifsf6e.apps.googleusercontent.com';

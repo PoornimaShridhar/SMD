@@ -209,7 +209,6 @@
 
 import React from 'react';
 import NoSsr from '@material-ui/core/NoSsr';
-import GoogleFontLoader from 'react-google-font-loader';
 import { makeStyles } from '@material-ui/core/styles';
 import Avatar from '@material-ui/core/Avatar';
 import Box from '@material-ui/core/Box';
@@ -232,7 +231,7 @@ import MusculoSkeletal from './assets/MusculoSkeletalPainSyndrome.jpeg';
 import MedicalWeightLoss from './assets/MedicalweightLoss.jpeg';
 import AthleteHealth from './assets/AthleteHealthAnddoping.jpeg'
 import SportsNutrition from './assets/SportsNutrition.jpg';
-import "./consult.scss";
+import "./consult.css";
 import { BiRupee } from "react-icons/bi";
 
 
@@ -370,10 +369,6 @@ export const Consult = React.memo(function Consult() {
 
   return (
     <>
-      <NoSsr>
-        <GoogleFontLoader fonts={[{ font: 'Sen', weights: [400, 800] }]} />
-      </NoSsr>
-
       {/* <Grid container style={{paddingRight:"300px", paddingLeft:"300px"}}>
 
           {

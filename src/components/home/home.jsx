@@ -16,7 +16,7 @@ import Container from 'react-bootstrap/Container';
 import { useN03TextInfoContentStyles } from '@mui-treasury/styles/textInfoContent/n03';
 import { useLightTopShadowStyles } from '@mui-treasury/styles/shadow/lightTop';
 import Button from '@material-ui/core/Button';
-import './home.scss';
+import './home.css';
 import BlogCardDemo from './consultCards/consultCards';
 import smd_logo from "./assets/smd_logo_black.png";
 import kinesis_logo from "./assets/kinesis_logo.png";

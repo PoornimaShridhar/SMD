@@ -8,7 +8,7 @@
 // import Button from '@material-ui/core/Button';
 // import Typography from '@material-ui/core/Typography';
 // import Grid from '@material-ui/core/Grid';
-// import "./achievements.scss";
+// import "./achievements.css";
 // import c1 from "./assets/c1.jpg";
 // import c3 from "./assets/c3.jpg";
 // import c4 from "./assets/c4.jpg";
@@ -360,7 +360,7 @@ import CardMedia from '@material-ui/core/CardMedia';
 import Button from 'react-bootstrap/Button'
 import Typography from '@material-ui/core/Typography';
 import Grid from '@material-ui/core/Grid';
-import "./achievements.scss";
+import "./achievements.css";
 import c1 from "./assets/c1.jpg";
 import c3 from "./assets/c3.jpg";
 import c4 from "./assets/c4.jpg";

@@ -25,7 +25,7 @@ import {
   } from "react-router-dom";
 import Dropdown from 'react-bootstrap/Dropdown';
 import DropdownButton from 'react-bootstrap/DropdownButton';
-import "./style.scss";
+import "./style.css";
 import SettingsIcon from '@material-ui/icons/Settings';
 import { CommentSharp } from '@material-ui/icons';
 import { InstapaperShareButton, FacebookShareButton, 

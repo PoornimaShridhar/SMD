@@ -1,0 +1,76 @@
+#certhover img {
+  transition: transform 0.25s ease;
+}
+
+#certhover:hover img {
+  -webkit-transform: scale(2.5);
+  transform: scale(2.5);
+}
+
+.headings {
+  font-size: 4.5vh;
+}
+
+.cred_head {
+  font-size: 2.5vh;
+  text-align: left;
+}
+
+.cred_body {
+  font-size: 2vh;
+}
+
+.certificate {
+  font-size: 3.5vh;
+  size: 'lg';
+}
+
+.view_cert {
+  font-size: 3.5vh;
+}
+
+.icon {
+  font-size: 4vh;
+}
+
+@media only screen and (max-width: 1200px) {
+  .headings {
+    font-size: 4vh;
+  }
+
+  .cred_head {
+    font-size: 2.5vh;
+    text-align: left;
+  }
+
+  .cred_body {
+    font-size: 2vh;
+  }
+
+  .certificate {
+    size: 'md';
+  }
+}
+
+@media only screen and (max-width: 770px) {
+  .headings {
+    font-size: 3vh;
+  }
+
+  .cred_head {
+    font-size: 2vh;
+    text-align: left;
+  }
+
+  .cred_body {
+    font-size: 1.5vh;
+  }
+
+  .view_cert {
+    font-size: 2vh;
+  }
+
+  .certificate {
+    size: 'sm';
+  }
+}
